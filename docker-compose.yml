@@ -10,9 +10,6 @@ services:
       networks:
         - budgetcontrol_network
       restart: unless-stopped
-      ports:
-        - 8089:80
-
 networks:
   budgetcontrol_network:
     external: false
