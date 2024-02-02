@@ -1,4 +1,24 @@
 
+<script>
+        $(document).ready(function(){
+            $("#sendemail").click(function(){
+                var emailValue = $("#email").val();
+
+                $.ajax({
+                    type: "POST",
+                    url: "http://dev.budgetcontrol.lan:8089/savemail",
+                    data: JSON.stringify({email: emailValue}),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                });
+
+                if(response.status === 200){
+                    $("#showmessage").show();
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>

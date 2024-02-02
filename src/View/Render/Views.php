@@ -20,7 +20,7 @@ class Views
 
     public function render(array $data = []): void
     {
-        echo $this->twig->render($this->templateName, $data);
+        echo $this->twig->render($this->templateName, $data); die;
     }
 
     private function validate()
