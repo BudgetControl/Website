@@ -58,11 +58,12 @@
 			<h2>Sign up and we'll let you know when we launch</h2>
 			<p>If you would like to receive <strong>news and special offers</strong> please send us your email address
 				below:</p>
+				<p id="showmessage" style="color:white; font-weight: 400; visibility: hidden;">Thank you for providing your email. You will be notified at the application launch before others! </p>
 			<div id="signupform" class="sb-search clearfix">
-				<form method="post" id="contact" class="clearfix">
-					<input class="sb-search-input" placeholder="Enter email ..." type="text" value="">
+				<form method="post" action="javascript:void(0)" id="contact" class="clearfix">
+					<input class="sb-search-input" id="email" placeholder="Enter email ..." type="text" value="">
 					<input class="sb-search-submit" value="" type="submit">
-					<button class="formbutton" type="submit"><span class="fa fa-search"></span></button>
+					<button class="formbutton" id="sendemail" type="submit"><span class="fa fa-search"></span></button>
 				</form>
 			</div>
 
