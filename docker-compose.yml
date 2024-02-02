@@ -1,0 +1,19 @@
+version: '2.2'
+
+services:
+    #database: use budgetcontrole CORE database https://github.com/BudgetControl/Core
+    website:
+      container_name: budgetcontrol-website
+      image: budgetcontrol-website:${APP_ENV}_${APP_VERSION}
+      volumes:
+        - ./:/var/www/workdir
+      networks:
+        - budgetcontrol_network
+      restart: unless-stopped
+      ports:
+        - 8089:80
+
+networks:
+  budgetcontrol_network:
+    external: false
+    name: budgetcontrol_network

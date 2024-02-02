@@ -1,0 +1,29 @@
+{
+    "name": "mlab/budgetcontrol",
+    "description": "Simple web site template base",
+    "type": "metapackage",
+    "require": {
+        "illuminate/database": "^10.43",
+        "monolog/monolog": "^3.5",
+        "respect/validation": "^2.3",
+        "guzzlehttp/guzzle": "^7.8",
+        "vlucas/phpdotenv": "^5.6",
+        "twig/twig": "^3.8",
+        "slim/slim": "^4.0",
+        "robmorgan/phinx": "^0.16.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mlab\\BudetControl\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marco De Felice",
+            "email": "marco.defelice@gmail.com"
+        }
+    ]
+}
