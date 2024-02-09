@@ -4,7 +4,7 @@
 		thisEl = $(this);
 		//array of custom settings
 		var settings = { 
-			'date': "2024/04/12 10:10:10",
+			'date': "2024/09/01 10:0:0",
 			'format': "on"
 		};
 		//append the settings array to options
