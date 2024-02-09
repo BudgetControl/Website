@@ -25,11 +25,12 @@ class HomeController extends Controller
     {
 
         $parsedBody = $request->getParsedBody();
-
-        $data = new DataModel();
-        $data->email = $parsedBody['email'];
-        $data->marketing = true;
-        $data->save();
+	
+	file_put_contents('/var/www/workdir/storage/email.log',json_encode(['email' => $parsedBody['email'], 'date' => date('Y-m-d H:i:s')]),FILE_APPEND);
+#        $data = new DataModel();
+#        $data->email = $parsedBody['email'];
+#        $data->marketing = true;
+#        $data->save();
 
         return $response->withStatus(201);
 

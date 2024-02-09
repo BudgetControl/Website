@@ -3,7 +3,8 @@
         $(document).ready(function(){
             $("#sendemail").click(function(){
                 var emailValue = $("#email").val();
-
+		
+		if(validateEmail()) {
                 $.ajax({
                     type: "POST",
                     url: "https://www.budgetcontrol.cloud/savemail",
@@ -11,10 +12,27 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                 });
-
-                $("#showmessage").show();
-            });
+		$("#email").val('')
+                $("#showmessage").css('visibility','visible')
+           }
+ });
         });
+
+function validateEmail() {
+      // Ottieni il valore dall'input
+      var email = $('#email').val();
+
+      // Espressione regolare per la validazione dell'email
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      // Controlla se l'email è valida
+      if (emailRegex.test(email)) {
+        return true;
+      } else {
+        return false
+      }
+    }
+
     </script>
 
 </body>
