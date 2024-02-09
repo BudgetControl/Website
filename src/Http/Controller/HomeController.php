@@ -18,7 +18,7 @@ class HomeController extends Controller
             'title' => 'Hello Page',
             'message' => 'Hello, world!',
         ];
-        $viewRenderer->render($data);
+        $viewRenderer->render($data, ['google_analytics_code' => env('GOOGLE_ANALITYCS_CODE')]);
     }
 
     public function saveContact(Request $request, Response $response): Response
