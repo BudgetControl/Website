@@ -4,13 +4,14 @@ services:
     #database: use budgetcontrole CORE database https://github.com/BudgetControl/Core
     website:
       container_name: budgetcontrol-website
-      image: budgetcontrol-website:${APP_ENV}_${APP_VERSION}
+      image: budgetcontrol/core:v2.2
       volumes:
         - ./:/var/www/workdir
       networks:
         - budgetcontrol_network
       restart: unless-stopped
+
 networks:
   budgetcontrol_network:
-    external: false
+    external: true
     name: budgetcontrol_network

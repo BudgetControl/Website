@@ -1,118 +1,631 @@
- {% include 'partials/header.twig' %}
+{% include 'partials/header.html' %}
 
-<body id="backtotop">
 
-	<div class="fullwidth clearfix">
-		<div id="topcontainer" class="bodycontainer clearfix"
-			data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-
-			<p><span class="fa fa-signal"></span></p>
-			<h1><span>Budget Control</span><br />is coming soon</h1>
-			<p>It's almost ready ... honest</p>
-
-		</div>
-	</div>
-
-	<div class="arrow-separator arrow-white"></div>
-
-	<div class="fullwidth colour1 clearfix">
-		<div id="countdown" class="bodycontainer clearfix"
-			data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-
-			<div id="countdowncont" class="clearfix">
-				<ul id="countscript">
-					<li>
-						<span class="days">00</span>
-						<p>Days</p>
-					</li>
-					<li>
-						<span class="hours">00</span>
-						<p>Hours</p>
-					</li>
-					<li class="clearbox">
-						<span class="minutes">00</span>
-						<p>Minutes</p>
-					</li>
-					<li>
-						<span class="seconds">00</span>
-						<p>Seconds</p>
-					</li>
-				</ul>
+	<!-- end header section -->
+	<!-- slider section -->
+	<section class="slider_section ">
+		<div id="customCarousel1" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="container ">
+						<div class="row">
+							<div class="col-md-6 ">
+								<div class="detail-box">
+									<h1>
+										Crypto <br>
+										Currency
+									</h1>
+									<p>
+										Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat
+										hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias,
+										veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+									</p>
+									<div class="btn-box">
+										<a href="" class="btn1">
+											Read More
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="img-box">
+									<img src="images/slider-img.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item ">
+					<div class="container ">
+						<div class="row">
+							<div class="col-md-6 ">
+								<div class="detail-box">
+									<h1>
+										Crypto <br>
+										Currency
+									</h1>
+									<p>
+										Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat
+										hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias,
+										veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+									</p>
+									<div class="btn-box">
+										<a href="" class="btn1">
+											Read More
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="img-box">
+									<img src="images/slider-img.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="container ">
+						<div class="row">
+							<div class="col-md-6 ">
+								<div class="detail-box">
+									<h1>
+										Crypto <br>
+										Currency
+									</h1>
+									<p>
+										Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat
+										hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias,
+										veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+									</p>
+									<div class="btn-box">
+										<a href="" class="btn1">
+											Read More
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="img-box">
+									<img src="images/slider-img.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-
+			<ol class="carousel-indicators">
+				<li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+				<li data-target="#customCarousel1" data-slide-to="1"></li>
+				<li data-target="#customCarousel1" data-slide-to="2"></li>
+			</ol>
 		</div>
-	</div>
 
-	<div class="arrow-separator arrow-theme"></div>
+	</section>
+	<!-- end slider section -->
+</div>
 
-	<div class="fullwidth colour2 clearfix">
-		<div id="maincont" class="bodycontainer clearfix"
-			data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-			
-			<p>Budget Control is your all-in-one solution for effortless financial management. Take charge of your
-				finances with intuitive tools that make budgeting a breeze. Track your expenses, set savings goals, and
-				stay on top of your financial game. With Budget Control, achieving financial wellness has never been
-				more straightforward. Experience simplicity and empowerment in one powerful app.</p>
-			<p>	Feel free to customize it based on specific features or unique aspects of your app!
-			</p>
 
-			<p>Budget Control is Open Source, join the project and contribute your ideas! <br>
-				<a href="https://github.com" aria-label="Homepage" class="footer-octicon" title="GitHub">
-					<svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
-			  </svg>
-			  </a><a href="https://github.com/BudgetControl">github.com/BudgetControl</a></p>
-			
-			<h2>Sign up and we'll let you know when we launch</h2>
-			<p>if you want to be notified of the launch, and want to be part of a <b>beta test</b>, send us your email address below:</p>
-				<p id="showmessage" style="color:white; font-weight: 400; visibility: hidden;">Thank you for providing your email. You will be notified at the application launch before others! </p>
-			<div id="signupform" class="sb-search clearfix">
-				<form method="post" action="javascript:void(0)" id="contact" class="clearfix">
-					<input class="sb-search-input" id="email" placeholder="Enter email ..." type="text" value="">
-					<input class="sb-search-submit" value="" type="submit">
-					<button class="formbutton" id="sendemail" type="submit"><span class="fa fa-search"></span></button>
-				</form>
+<!-- service section -->
+
+<section class="service_section layout_padding">
+	<div class="service_container">
+		<div class="container ">
+			<div class="heading_container heading_center">
+				<h2>
+					Key <span>Features</span>
+				</h2>
 			</div>
-
-		</div>
-	</div>
-
-	<div class="arrow-separator arrow-themelight"></div>
-
-	<div class="fullwidth colour3 clearfix">
-		<div id="quotecont" class="bodycontainer clearfix"
-			data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-
-			<div id="commentslider" class="owl-carousel">
-				<div class="item">
-					<p>"Nell'arte della gestione finanziaria, la sua abilità nel bilanciare entrate e uscite potrebbe essere paragonata a un direttore d'orchestra esperto nell'armonizzare le note di entrate e spese, incantando il pubblico con una sinfonia di equilibrio finanziario."</p>
+			<div class="row">
+				<div class="col-md-4 ">
+					<div class="box ">
+						<div class="img-box">
+							<img src="images/s1.png" alt="">
+						</div>
+						<div class="detail-box">
+							<h5>
+								Comprehensive Statistics and Graphs
+							</h5>
+							<p>
+								Gain valuable insights into your spending habits with detailed annual and monthly breakdowns presented in visually appealing graphs. Understand where your money is going and make informed decisions.
+							</p>
+							<a href="">
+								Read More
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 ">
+					<div class="box ">
+						<div class="img-box">
+							<img src="images/s2.png" alt="">
+						</div>
+						<div class="detail-box">
+							<h5>
+								Transaction Tracking
+							</h5>
+							<p>
+								Keep a detailed record of all your transactions, ensuring transparency and accountability in your financial activities.
+							</p>
+							<a href="">
+								Read More
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 ">
+					<div class="box ">
+						<div class="img-box">
+							<img src="images/s3.png" alt="">
+						</div>
+						<div class="detail-box">
+							<h5>
+								Financial Planning and Forecasting
+							</h5>
+							<p>
+								Plan for the future with ease by utilizing our forecasting tools. Stay ahead of the game by setting financial goals and tracking your progress.
+							</p>
+							<a href="">
+								Read More
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 
-		</div>
-	</div>
-
-	<div class="arrow-separator arrow-grey"></div>
-
-	<div class="fullwidth clearfix">
-		<div id="footercont" class="bodycontainer clearfix"
-			data-uk-scrollspy="{cls:'uk-animation-fade', delay: 300, repeat: true}">
-
-			<p class="backtotop"><a title="" href="#backtotop"><span class="fa fa-angle-double-up"></span></a></p>
-			<div id="socialmedia" class="clearfix">
-				<ul>
-					<li><a title="" href="#" rel="external"><span class="fa fa-facebook"></span></a></li>
-					<li><a title="" href="#" rel="external"><span class="fa fa-twitter"></span></a></li>
-					<li><a title="" href="#" rel="external"><span class="fa fa-google-plus"></span></a></li>
-					<li><a title="" href="#" rel="external"><span class="fa fa-linkedin"></span></a></li>
-					<li><a title="" href="#" rel="external"><span class="fa fa-pinterest"></span></a></li>
-				</ul>
+			<div class="row">
+				<div class="col-md-4 ">
+					<div class="box ">
+						<div class="img-box">
+							<img src="images/s1.png" alt="">
+						</div>
+						<div class="detail-box">
+							<h5>
+								Search Functionality
+							</h5>
+							<p>
+								Find specific transactions quickly and efficiently with our powerful search feature. No more scrolling through endless lists – locate what you need in seconds.
+							</p>
+							<a href="">
+								Read More
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 ">
+					<div class="box ">
+						<div class="img-box">
+							<img src="images/s2.png" alt="">
+						</div>
+						<div class="detail-box">
+							<h5>
+								Transaction Tagging
+							</h5>
+							<p>
+								Organize your transactions effortlessly by assigning tags. Categorize expenses for better clarity and analysis.
+							</p>
+							<a href="">
+								Read More
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 ">
+					<div class="box ">
+						<div class="img-box">
+							<img src="images/s3.png" alt="">
+						</div>
+						<div class="detail-box">
+							<h5>
+								Budget Configuration
+							</h5>
+							<p>
+								Set your budget and receive timely email notifications when you exceed your limits. Stay on top of your finances effortlessly.
+							</p>
+							<a href="">
+								Read More
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
-			<p>Mlbafcatory by Marco De Felice <a title="website template"
-				href="https://www.mlabfactory.it" rel="external">Website</a>
-			Free Responsive Website Template by <a title="website template"
-					href="https://www.downloadwebsitetemplates.co.uk" rel="external">Website Template</a> - Icons by <a
-					title="" href="https://fortawesome.github.io/Font-Awesome/" rel="external">Font Awesome</a></p>
+
+			<div class="btn-box">
+				<a href="">
+					View All
+				</a>
+			</div>
 		</div>
 	</div>
+</section>
 
- {% include 'partials/footer.twig' %}
+<!-- end service section -->
+
+
+<!-- about section -->
+
+<section class="about_section layout_padding">
+	<div class="container  ">
+		<div class="heading_container heading_center">
+			<h2>
+				About <span>Budget Control</span>
+			</h2>
+			<p>
+				We're passionate about empowering individuals to take control of their finances and achieve financial
+				freedom.
+			</p>
+		</div>
+		<div class="row">
+			<div class="col-md-6 ">
+				<div class="img-box">
+					<img src="images/about-img.png" alt="">
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="detail-box">
+					<h3>
+						We are your financial compass.
+					</h3>
+					<p>
+						Are you looking for a reliable solution to manage your expenses effortlessly? <br />
+						Look no further! Our innovative Progressive Web Application is here to revolutionize the way you
+						track your spending.</p>
+					<P>
+						With Budget Control, you have the flexibility to configure multiple wallets, whether it's your
+						bank account, credit card, cash, or investment portfolio. Say goodbye to the hassle of juggling
+						between different platforms – everything you need is right at your fingertips.
+					</p>
+					<a href="">
+						Read More
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- end about section -->
+
+<!-- why section -->
+
+<section class="why_section layout_padding">
+	<div class="container">
+		<div class="heading_container heading_center">
+			<h2>
+				Why Choose <span>Us</span>
+			</h2>
+			<p>
+				Choose us for unparalleled financial empowerment. Our commitment to user-friendly interfaces, robust
+				security measures, and continuous improvement sets us apart. With our comprehensive features, free
+				accessibility, and dedication to your financial success, we're your trusted partner on the path to
+				financial well-being.
+			</p>
+		</div>
+		<div class="why_container">
+			<div class="box">
+				<div class="img-box">
+					<img src="images/w1.png" alt="">
+				</div>
+				<div class="detail-box">
+					<h5>
+						User-Friendly Interface
+					</h5>
+					<p>
+						Our intuitive interface makes managing your finances a breeze, whether you're a seasoned
+						investor or new to budgeting.
+					</p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="img-box">
+					<img src="images/w2.png" alt="">
+				</div>
+				<div class="detail-box">
+					<h5>
+						Security and Privacy
+					</h5>
+					<p>
+						Rest assured, your financial data is encrypted and securely stored. Your privacy is our top
+						priority.
+					</p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="img-box">
+					<img src="images/w3.png" alt="">
+				</div>
+				<div class="detail-box">
+					<h5>
+						Continuous Improvement
+					</h5>
+					<p>
+						We're committed to delivering the best possible experience for our users. Expect regular updates
+						and enhancements to further elevate your financial management journey.
+					</p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="img-box">
+					<img src="images/w4.png" alt="">
+				</div>
+				<div class="detail-box">
+					<h5>
+						Free application
+					</h5>
+					<p>
+						Selecting our platform means gaining access to a powerful financial management tool, completely
+						free of charge. Our commitment to offering a no-cost solution ensures that anyone, regardless of
+						their financial situation, can benefit from our app's features without any barriers.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="btn-box">
+			<a href="">
+				Read More
+			</a>
+		</div>
+	</div>
+</section>
+
+<!-- end why section -->
+
+<!-- team section -->
+<section class="team_section layout_padding">
+	<div class="container-fluid">
+		<div class="heading_container heading_center">
+			<h2 class="">
+				Our <span> Team</span>
+			</h2>
+		</div>
+
+		<div class="team_container">
+			<div class="row">
+
+				<div class="col-lg-3 col-sm-6">
+					<div class="box ">
+						<div class="img-box">
+							<img src="images/anonymity-person.png" height="120px" class="img1" alt="">
+						</div>
+						<div class="detail-box">
+							<h5>
+								We are looking for
+							</h5>
+							<p>
+								Frontend Developer
+							</p>
+						</div>
+						<div class="social_box">
+							<a href="#">
+								<i class="fa fa-facebook" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-linkedin" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-instagram" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-youtube-play" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-sm-6">
+					<div class="box ">
+						<div class="img-box">
+							<img src="images/team-1.jpg" class="img1" alt="">
+						</div>
+						<div class="detail-box">
+							<h5>
+								Marco De Felice
+							</h5>
+							<p>
+								App Creator & Main Developer
+							</p>
+						</div>
+						<div class="social_box">
+							<a href="#">
+								<i class="fa fa-facebook" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-linkedin" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-instagram" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-youtube-play" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="box ">
+						<div class="img-box">
+							<img src="images/team-2.jpg" class="img1" alt="">
+						</div>
+						<div class="detail-box">
+							<h5>
+								Yovana Felices
+							</h5>
+							<p>
+								Financial Analyst
+							</p>
+						</div>
+						<div class="social_box">
+							<a href="#">
+								<i class="fa fa-facebook" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-linkedin" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-instagram" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-youtube-play" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-sm-6">
+					<div class="box ">
+						<div class="img-box">
+							<img src="images/anonymity-person.png" height="120px" class="img1" alt="">
+						</div>
+						<div class="detail-box">
+							<h5>
+								We are looking for
+							</h5>
+							<p>
+								Marketing Specialist
+							</p>
+						</div>
+						<div class="social_box">
+							<a href="#">
+								<i class="fa fa-facebook" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-linkedin" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-instagram" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-youtube-play" aria-hidden="true"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end team section -->
+
+
+<!-- client section -->
+
+<section class="client_section layout_padding">
+	<div class="container">
+		<div class="heading_container heading_center psudo_white_primary mb_45">
+			<h2>
+				What says our <span>Customers</span>
+			</h2>
+		</div>
+		<div class="carousel-wrap ">
+			<div class="owl-carousel client_owl-carousel">
+				<div class="item">
+					<div class="box">
+						<div class="img-box">
+							<img src="images/client1.jpg" alt="" class="box-img">
+						</div>
+						<div class="detail-box">
+							<div class="client_id">
+								<div class="client_info">
+									<h6>
+										LusDen
+									</h6>
+									<p>
+										magna aliqua. Ut
+									</p>
+								</div>
+								<i class="fa fa-quote-left" aria-hidden="true"></i>
+							</div>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="box">
+						<div class="img-box">
+							<img src="images/client2.jpg" alt="" class="box-img">
+						</div>
+						<div class="detail-box">
+							<div class="client_id">
+								<div class="client_info">
+									<h6>
+										Zen Court
+									</h6>
+									<p>
+										magna aliqua. Ut
+									</p>
+								</div>
+								<i class="fa fa-quote-left" aria-hidden="true"></i>
+							</div>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="box">
+						<div class="img-box">
+							<img src="images/client1.jpg" alt="" class="box-img">
+						</div>
+						<div class="detail-box">
+							<div class="client_id">
+								<div class="client_info">
+									<h6>
+										LusDen
+									</h6>
+									<p>
+										magna aliqua. Ut
+									</p>
+								</div>
+								<i class="fa fa-quote-left" aria-hidden="true"></i>
+							</div>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="box">
+						<div class="img-box">
+							<img src="images/client2.jpg" alt="" class="box-img">
+						</div>
+						<div class="detail-box">
+							<div class="client_id">
+								<div class="client_info">
+									<h6>
+										Zen Court
+									</h6>
+									<p>
+										magna aliqua. Ut
+									</p>
+								</div>
+								<i class="fa fa-quote-left" aria-hidden="true"></i>
+							</div>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% include 'partials/footer.html' %}

@@ -1,0 +1,12 @@
+version: '2.2'
+
+services:
+    #database: use budgetcontrole CORE database https://github.com/BudgetControl/Core
+    website:
+      ports:
+        - "8888:80"
+
+networks:
+  budgetcontrol_network:
+    external: false
+    name: budgetcontrol_network
