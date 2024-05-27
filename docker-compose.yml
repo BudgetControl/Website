@@ -4,7 +4,7 @@ services:
     #database: use budgetcontrole CORE database https://github.com/BudgetControl/Core
     website:
       container_name: budgetcontrol-website
-      image: budgetcontrol-website:${APP_ENV}_${APP_VERSION}
+      image: mlabfactory/php8-apache:v1.0
       volumes:
         - ./:/var/www/workdir
       networks:
