@@ -9,3 +9,7 @@ $app->get('/budgetcontrol-for-professional-use', \Mlab\BudetControl\Http\Control
 $app->get('/login', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':login');
 $app->get('/donations', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':donations');
 $app->get('/thanks', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':thanks');
+$app->get('/contact', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':contact');
+
+$app->post('/be/api/subscribe', \Mlab\BudetControl\Http\Controller\SubscribeController::class . ':subscribe');
+$app->post('/be/api/contact', \Mlab\BudetControl\Http\Controller\SubscribeController::class . ':contact');

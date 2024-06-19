@@ -44,3 +44,50 @@ function myMap() {
     };
     var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 }
+
+// ajax call to subsribe form
+$(document).ready(function() {
+    $("#subscribeForm").submit(function(e) {
+        e.preventDefault();
+        var email = $("#email").val();
+        if (email == "") {
+            $("#error").html("Email is required");
+        } else {
+            $.ajax({
+                url: "/be/api/subscribe",
+                type: "POST",
+                data: {
+                    email: email
+                },
+                success: function(data) {
+                    $("#error").html(data);
+                }
+            });
+        }
+    });
+});
+
+$(document).ready(function() {
+    $("#contact-form").submit(function(e) {
+        e.preventDefault();
+        var email = $("#email").val();
+        var email = $("#message").val();
+        var email = $("#name").val();
+        if (email == "") {
+            $("#error").html("Email is required");
+        } else {
+            $.ajax({
+                url: "/be/api/contact",
+                type: "POST",
+                data: {
+                    email: email,
+                    message: message,
+                    name: name
+                },
+                success: function(data) {
+                    $("#error").html(data);
+                }
+            });
+        }
+    });
+});

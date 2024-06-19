@@ -1,12 +1,19 @@
-version: '2.2'
+version: '3'
 
 services:
-    #database: use budgetcontrole CORE database https://github.com/BudgetControl/Core
     website:
       container_name: budgetcontrol-website
-      image: budgetcontrol/core:v2.2
+      image: mlabfactory/php8-apache:v1.2.1
       volumes:
         - ./:/var/www/workdir
+        - ./bin/apache/default.conf:/etc/apache2/sites-available/budgetcontrol.cloud.conf
+      networks:
+        - budgetcontrol_network
+      restart: unless-stopped
+    
+    swagger:
+      container_name: swagger.budgetcontrol.lan
+      image: swaggerapi/swagger-ui
       networks:
         - budgetcontrol_network
       restart: unless-stopped

@@ -57,4 +57,11 @@ class RoutingController extends Controller
         $viewRenderer->render($data);
     }
 
+    public function contact()
+    {
+        $viewRenderer = new \Mlab\BudetControl\View\Contact();
+        $data = [];
+        $viewRenderer->render($data);
+    }
+
 }

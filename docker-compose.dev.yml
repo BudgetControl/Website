@@ -1,8 +1,9 @@
-version: '2.2'
+version: '3'
 
 services:
-    #database: use budgetcontrole CORE database https://github.com/BudgetControl/Core
     website:
+      platform: linux/x86_64
+      image: mlabfactory/php8-apache:v1.2.1-xdebug
       ports:
         - "8888:80"
 
