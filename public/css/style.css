@@ -404,6 +404,14 @@ a:focus {
   align-items: center;
   text-align: center;
 }
+
+.page .text-box {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .page .box .row {
   margin-top: 10px;
 }

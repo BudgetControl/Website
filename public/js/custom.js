@@ -48,7 +48,6 @@ function myMap() {
 // ajax call to subsribe form
 $(document).ready(function() {
     $("#subscribeForm").submit(function(e) {
-        e.preventDefault();
         var email = $("#email").val();
         if (email == "") {
             $("#error").html("Email is required");
@@ -69,10 +68,9 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $("#contact-form").submit(function(e) {
-        e.preventDefault();
         var email = $("#email").val();
-        var email = $("#message").val();
-        var email = $("#name").val();
+        var message = $("#message").val();
+        var name = $("#name").val();
         if (email == "") {
             $("#error").html("Email is required");
         } else {

@@ -16,7 +16,6 @@ class SubscribeController
     public function subscribe(Request $request, Response $response): Response
     {
         $parsedBody = $request->getParsedBody();
-
         $data = new DataModel();
         $data->email = $parsedBody['email'];
         $data->marketing = true;
