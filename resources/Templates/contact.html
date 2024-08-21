@@ -18,9 +18,9 @@
              </p>
           </div>
 
-          <div class="container contact-form" id="contact-form">
+          <div class="container contact-form">
             <div class="col-md-12">
-              <form>
+              <form id="contact-form">
                 <div class="form-group">
                   <input type="text" class="form-control" id="name" placeholder="Enter your name">
                 </div>
@@ -28,13 +28,13 @@
                   <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
                 </div>
                 <div class="form-group">
-                    <input type="checkbox" required /> 
-                    <label class="f" for="privacy">
-                      I accept the <a href=""> policy policy </a>
-                    </label>
+                  <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+                    <input type="checkbox" required /> 
+                    <label class="f" for="privacy">
+                      I accept the <a href="https://dev.budgetcontrol.cloud/privacy"> policy policy </a>
+                    </label>
                 </div>
                 <button type="submit" class="btn cen">Submit</button>
               </form>
