@@ -83,6 +83,7 @@ $(document).ready(function() {
                     name: name
                 },
                 success: function(data) {
+                    $("#contact-form").trigger("reset");
                     $("#error").html(data);
                 }
             });
