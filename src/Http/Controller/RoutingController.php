@@ -64,4 +64,18 @@ class RoutingController extends Controller
         $viewRenderer->render($data);
     }
 
+    public function terms()
+    {
+        $viewRenderer = new \Mlab\BudetControl\View\Terms();
+        $data = [];
+        $viewRenderer->render($data);
+    }
+
+    public function privacy()
+    {
+        $viewRenderer = new \Mlab\BudetControl\View\privacy();
+        $data = [];
+        $viewRenderer->render($data);
+    }
+
 }

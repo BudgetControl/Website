@@ -13,3 +13,6 @@ $app->get('/contact', \Mlab\BudetControl\Http\Controller\RoutingController::clas
 
 $app->post('/be/api/subscribe', \Mlab\BudetControl\Http\Controller\SubscribeController::class . ':subscribe');
 $app->post('/be/api/contact', \Mlab\BudetControl\Http\Controller\SubscribeController::class . ':contact');
+
+$app->get('/terms', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':terms');
+$app->get('/privacy', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':privacy');
