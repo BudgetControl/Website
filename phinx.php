@@ -4,16 +4,16 @@ return [
         'migrations' => 'resources/migrations',
     ],
     'environments' => [
-        'default_migration_table' => 'phinxlog',
+        'default_migration_table' => 'phinxlog_web',
         'default_database' => 'development',
         'development' => [
             'adapter'   => 'mysql',
-            'host' => 'budgetcontrol-db',
-            'name' => 'budgetV2_website',
-            'user' => 'root',
-            'pass' => 'rootpasswordmaster',
+            'host' => env('DB_HOST'),
+            'name' => env('DB_DATABASE'),
+            'user' => env('DB_USERNAME'),
+            'pass' => env('DB_PASSWORD'),
             'charset'  => 'utf8',
-            'port' => 3306
+            'port' => env('DB_PORT')
         ],
     ],
 ];
