@@ -73,7 +73,7 @@ class RoutingController extends Controller
 
     public function privacy()
     {
-        $viewRenderer = new \Mlab\BudetControl\View\privacy();
+        $viewRenderer = new \Mlab\BudetControl\View\Privacy();
         $data = [];
         $viewRenderer->render($data);
     }
