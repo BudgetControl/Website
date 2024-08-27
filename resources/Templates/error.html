@@ -1,0 +1,24 @@
+{% include 'partials/header.html' %}
+
+<!-- about section -->
+
+<section class="full_page layout_padding">
+	<div class="container">
+		<div class="heading_container heading_center">
+			<h2>
+				Something went <span>wrong!</span>
+			</h2>
+			<p>
+				Oops! It seems like something went wrong. Don't worry, our team is on it. Please try again later.
+				<br>
+				{{ message }}
+				<br>
+				{{ exception }}
+			</p>
+		</div>
+	</div>
+</section>
+
+<!-- end about section -->
+
+{% include 'partials/footer.html' %}

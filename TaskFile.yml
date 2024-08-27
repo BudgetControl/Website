@@ -1,0 +1,18 @@
+version: '3'
+dotenv:
+  - ".env"
+tasks:
+  build:prod:
+    desc: Build production enviroment
+    cmds:
+      - docker-compose up -d
+      - docker container cp bin/apache/default.conf budgetcontrol-website:/etc/apache2/sites-available/budgetcontrol.cloud.conf
+      - docker container exec budgetcontrol-website service apache2 restart
+      - docker container exec budgetcontrol-website vendor/bin/phinx migrate
+  build:dev:
+    desc: Build production enviroment
+    cmds:
+      - docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+      - docker container cp bin/apache/default.conf budgetcontrol-website:/etc/apache2/sites-available/budgetcontrol.cloud.conf
+      - docker container exec budgetcontrol-website service apache2 restart
+      - docker container exec budgetcontrol-website vendor/bin/phinx migrate

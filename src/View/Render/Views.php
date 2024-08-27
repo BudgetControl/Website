@@ -8,7 +8,7 @@ use Twig\Loader\FilesystemLoader;
 class Views
 {
     protected string $dirPath = __DIR__.'/../../../resources/Templates/';
-    private Environment $twig;
+    protected Environment $twig;
     protected string $templateName = 'template.twig';
 
     public function __construct()
@@ -20,6 +20,8 @@ class Views
 
     public function render(array $data = []): void
     {
+        $data['app_url'] = env('APP_URL');
+
         echo $this->twig->render($this->templateName, $data); die;
     }
 
