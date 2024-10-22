@@ -16,3 +16,4 @@ $app->post('/be/api/contact', \Mlab\BudetControl\Http\Controller\SubscribeContro
 
 $app->get('/terms', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':terms');
 $app->get('/privacy', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':privacy');
+$app->get('/team/contributors', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':contributors');

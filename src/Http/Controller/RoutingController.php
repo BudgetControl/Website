@@ -78,4 +78,11 @@ class RoutingController extends Controller
         $viewRenderer->render($data);
     }
 
+    public function contributors()
+    {
+        $viewRenderer = new \Mlab\BudetControl\View\Contributors();
+        $data = [];
+        $viewRenderer->render($data);
+    }
+
 }

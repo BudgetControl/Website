@@ -547,6 +547,14 @@ a:focus {
   background-color: $primary2;
   color: $white;
 
+  a {
+    color: $white;
+
+    &:hover {
+      color: $primary1;
+    }
+  }
+
   .heading_container {
     justify-content: center;
   }
@@ -576,6 +584,8 @@ a:focus {
 
       }
 
+      
+
       .detail-box {
         margin: 25px 0;
 
@@ -593,12 +603,7 @@ a:focus {
         justify-content: space-between;
 
         a {
-          color: $white;
           font-size: 22px;
-
-          &:hover {
-            color: $primary1;
-          }
         }
       }
     }

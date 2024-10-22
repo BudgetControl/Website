@@ -404,14 +404,6 @@ a:focus {
   align-items: center;
   text-align: center;
 }
-
-.page .text-box {
-  margin-top: 45px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .page .box .row {
   margin-top: 10px;
 }
@@ -463,6 +455,12 @@ a:focus {
   background-color: #059669;
   color: #ffffff;
 }
+.team_section a {
+  color: #ffffff;
+}
+.team_section a:hover {
+  color: #16a34a;
+}
 .team_section .heading_container {
   justify-content: center;
 }
@@ -501,11 +499,7 @@ a:focus {
   justify-content: space-between;
 }
 .team_section .team_container .box .social_box a {
-  color: #ffffff;
   font-size: 22px;
-}
-.team_section .team_container .box .social_box a:hover {
-  color: #16a34a;
 }
 
 /*team section end*/
