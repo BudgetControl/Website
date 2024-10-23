@@ -3,17 +3,10 @@ version: '3'
 services:
     website:
       container_name: budgetcontrol-website
-      image: mlabfactory/php8-apache:v1.2.1
+      image: mlabfactory/php8-apache:v1.2.2
       volumes:
         - ./:/var/www/workdir
         - ./bin/apache/default.conf:/etc/apache2/sites-available/budgetcontrol.cloud.conf
-      networks:
-        - budgetcontrol_network
-      restart: unless-stopped
-    
-    swagger:
-      container_name: swagger.budgetcontrol.lan
-      image: swaggerapi/swagger-ui
       networks:
         - budgetcontrol_network
       restart: unless-stopped
