@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9770bc092eb6cc51412d789e55e54e74",
+    "content-hash": "e57715a1fbbae3c07115d6ab45cfaeaa",
     "packages": [
         {
             "name": "brick/math",
@@ -1706,10 +1706,16 @@
         {
             "name": "mlabfactory/wordpress-php-sdk",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mlabfactory/WordPress-PHP-SDK.git",
+                "reference": "5dd9c7d4386dfdb588375428983b95917bd71fdd"
+            },
             "dist": {
-                "type": "path",
-                "url": "/root/Projects/marco/MLAB/WordPress-PHP-SDK",
-                "reference": "f40fabb44d1bf20a0f5dbeab37cbe3bbedc4bb1b"
+                "type": "zip",
+                "url": "https://api.github.com/repos/mlabfactory/WordPress-PHP-SDK/zipball/5dd9c7d4386dfdb588375428983b95917bd71fdd",
+                "reference": "5dd9c7d4386dfdb588375428983b95917bd71fdd",
+                "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^7.9",
@@ -1720,6 +1726,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^10.5"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -1747,9 +1754,16 @@
                 "sdk",
                 "wordpress"
             ],
-            "transport-options": {
-                "relative": false
-            }
+            "support": {
+                "source": "https://github.com/mlabfactory/WordPress-PHP-SDK/tree/master"
+            },
+            "funding": [
+                {
+                    "type": "github",
+                    "url": "https://github.com/Mlabfactory"
+                }
+            ],
+            "time": "2024-12-27T17:09:58+00:00"
         },
         {
             "name": "monolog/monolog",

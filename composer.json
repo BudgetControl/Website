@@ -8,8 +8,8 @@
             "url": "https://github.com/mlabfactory/Libs_Mailer.git"
         },
         "mlabfactory/wordpress-php-sdk": {
-            "type": "path",
-            "url": "/root/Projects/marco/MLAB/WordPress-PHP-SDK"
+            "type": "vcs",
+            "url": "https://github.com/mlabfactory/WordPress-PHP-SDK.git"
         }
     },
     "require": {
