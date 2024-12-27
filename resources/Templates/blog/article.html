@@ -1,0 +1,25 @@
+{% include 'partials/header.html' %}
+
+<!-- documentation section -->
+
+<section class="page layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        {{ title | raw }}
+      </h2>
+      {{ excerpt | raw }}
+    </div>
+    <div class="container">
+      <div class="text-box">
+        <div class="detail-box">
+        {{ content | raw }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end documentation section -->
+
+{% include 'partials/footer.html' %}

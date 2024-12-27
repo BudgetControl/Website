@@ -407,6 +407,21 @@ a:focus {
 .page .box .row {
   margin-top: 10px;
 }
+.page .box .img-box-article {
+  margin-bottom: 20px;
+  width: 100%;
+  height: 220px;
+  border: 5px solid #059669;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 3%;
+}
+.page .box .img-box-article img {
+  height: auto;
+  width: 100%;
+}
 .page .box .img-box {
   margin-bottom: 20px;
   width: 120px;

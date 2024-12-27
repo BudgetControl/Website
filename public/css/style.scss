@@ -498,6 +498,23 @@ a:focus {
       margin-top: 10px;
     }
 
+    .img-box-article {
+      margin-bottom: 20px;
+      width: 100%;
+      height: 220px;
+      border: 5px solid $primary2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border-radius: 3%;
+
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+
     .img-box {
       margin-bottom: 20px;
       width: 120px;

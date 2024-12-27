@@ -3,6 +3,8 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 use Monolog\Level;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use MadeITBelgium\WordPress\WordPress;
+use MadeITBelgium\WordPress\WordPressFacade;
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');
 $dotenv->load();
@@ -26,8 +28,16 @@ $logger->pushHandler($streamHandler);
 /** mail configuration */
 require_once __DIR__ . '/mail.php';
 
+/** WORDPRESS client service */
+require_once __DIR__ . '/wordpress.php';
+
+/** CACHE SYSTEM */
+require_once __DIR__ . '/cache.php';
+
 // Set up the Facade application
 Illuminate\Support\Facades\Facade::setFacadeApplication([
     'log' => $logger,
-    'mail' => $mail
+    'mail' => $mail,
+    'wordpress-client' => $wordpressClient,
+    'cache' => $cache
 ]);
