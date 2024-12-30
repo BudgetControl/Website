@@ -44,10 +44,5 @@
         }
     ],
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "scripts": {
-        "post-install-cmd": [
-            "rm vendor/mlabfactory/wordpress-php-sdk && cp -r /root/Projects/marco/MLAB/WordPress-PHP-SDK vendor/mlabfactory/wordpress-php-sdk"
-        ]
-    }
+    "prefer-stable": true
 }
