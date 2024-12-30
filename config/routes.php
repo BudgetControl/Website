@@ -22,8 +22,8 @@ $app->get('/team/contributors', \Mlab\BudetControl\Http\Controller\RoutingContro
 /** WORDPRESS BLOG URLs */
 $app->group('', function () use ($app) {
     $app->get('/blog', \Mlab\BudetControl\Http\Controller\BlogController::class . ':index');
-    $app->get('/blog/articles/{category}', \Mlab\BudetControl\Http\Controller\WordpressController::class . ':showByCategory');
-    $app->get('/blog/articles/{category}/{slug}', \Mlab\BudetControl\Http\Controller\WordpressController::class . ':show');
+    $app->get('/blog/{category}', \Mlab\BudetControl\Http\Controller\WordpressController::class . ':showByCategory');
+    $app->get('/blog/{category}/{slug}', \Mlab\BudetControl\Http\Controller\WordpressController::class . ':show');
 })->add(new \Mlab\BudetControl\Http\Middleware\CachingMiddleware());
 
 $app->get('/api/wordpress/posts/clear-cache', \Mlab\BudetControl\Http\Controller\WordpressController::class . ':postCache')->add(new \Mlab\BudetControl\Http\Middleware\AuthApiMiddleware());

@@ -44,7 +44,10 @@ class WordpressController extends BlogController
 
         $data = $contentData->toArray();
         $data['seo'] = $wordpress->getBody()['yoast_head_json'];
-        $data['category'] = $this->categories->getbyname($category)->getName();
+        $data['category'] = [
+            'name' => $this->categories->getbyname($category)->getName(),
+            'slug' => $this->categories->getbyname($category)->getSlug()
+        ];
 
         return $page->render($data, $wordpress);
     }
@@ -84,7 +87,10 @@ class WordpressController extends BlogController
             ];
         }
 
-        return $view->render(['posts' => $articles, 'category' => $category->getName()]);
+        return $view->render(['posts' => $articles, 'category' => [
+            'name' => $category->getName(),
+            'slug' => $category->getSlug()
+        ]]);
     }
 
     /**
