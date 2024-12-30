@@ -44,6 +44,7 @@ class WordpressController extends BlogController
 
         $data = $contentData->toArray();
         $data['seo'] = $wordpress->getBody()['yoast_head_json'];
+        $data['category'] = $this->categories->getbyname($category)->getName();
 
         return $page->render($data, $wordpress);
     }
