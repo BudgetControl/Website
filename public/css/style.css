@@ -959,4 +959,20 @@ img.border-white {
 .article-list a, .article-list a:hover, .article-list a:focus {
   color: #000000;
   text-decoration: none;
+}
+
+.breadcrumbs {
+  color: #365314;
+  padding: 10px 0;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: small;
+  background-color: #ffffff;
+}
+.breadcrumbs .container {
+  margin-left: 20px;
+}
+.breadcrumbs .container a {
+  color: #365314;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */

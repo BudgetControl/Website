@@ -1,6 +1,22 @@
 {% include 'partials/header.html' with {'seo' : seo } %}
 
+<section class="breadcrumbs">
+	{% if category %}
+	<div class="container">
+	  <a href="/">H</a> &gt;
+	  <a href="/blog">Blog</a> &gt;
+	  <span>{{category}}</span>
+	</div>
+	{% else %}
 
+	<div class="container">
+	  <a href="/">H</a> &gt;
+	  <span>Blog</span>
+	</div>
+
+	{% endif %}
+</section>
+  
 <section class="page layout_padding">
 	<div class="service_container">
 		<div class="container ">

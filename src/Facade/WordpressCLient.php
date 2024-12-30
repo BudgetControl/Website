@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static \Mlabfactory\WordPress\WordPressFacade outputAsObject($outputAsObject)
  * @method static \Mlabfactory\WordPress\WordPressFacade rawOutput($rawOutput)
  * @method static \Mlabfactory\WordPress\Service\Media media()
+ * @method static \Mlabfactory\WordPress\Service\Category Category()
  * 
  * @see \Mlabfactory\WordPress\WordPress
  */

@@ -3,21 +3,26 @@ declare(strict_types=1);
 
 namespace Mlab\BudetControl\Http\Controller;
 
-use League\Container\Exception\NotFoundException;
 use Mlab\BudetControl\Entities\Posts;
 use Mlab\BudetControl\View\Blog\Article;
+use Mlab\BudetControl\Entities\Categories;
 use Mlab\BudetControl\Facade\WordpressCLient;
 use Mlab\BudetControl\Services\WordpressPost;
+use Mlab\BudetControl\View\Blog\ArticlesList;
+use League\Container\Exception\NotFoundException;
+use Mlab\BudetControl\Services\Wordpress;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 class WordpressController extends BlogController
 {
     private Posts $postsId;
+    private Categories $categories;
 
     public function __construct()
     {
         $this->postsId = WordpressPost::getArticles();
+        $this->categories = WordpressPost::getCategories();
     }
     
     public function show(Request $request, Response $response, array $args)
@@ -41,6 +46,44 @@ class WordpressController extends BlogController
         $data['seo'] = $wordpress->getBody()['yoast_head_json'];
 
         return $page->render($data, $wordpress);
+    }
+
+    public function showByCategory(Request $request, Response $response, array $args)
+    {
+        $category = $args['category'];
+
+        $page = new Article();
+        $category = $this->categories->getbyname($category);
+
+        if(!$category) {
+            throw new NotFoundException('',404);
+        }
+
+        $view = new ArticlesList();
+        $articles = [];
+
+        $posts = WordpressPost::getArticles(['categories' => $category->getId()]);
+
+        /** @var Posts $post */
+        foreach ($posts->getPosts() as $post) {
+
+            /** @var Post $article */
+            $article = $post['post'];
+            
+            /** @var Media $media */
+            $media = $post['media'];
+
+            $articles[] = [
+                'title' => $article->getContent()->getTitle(),
+                'link' => path_to($article->getLink(), 'articles'),
+                'excerpt' => $article->getContent()->getExcerpt(),
+                'date' => $article->getDate(),
+                'author' => $article->getAuthor(),
+                'media' => $media?->getLink()
+            ];
+        }
+
+        return $view->render(['posts' => $articles, 'category' => $category->getName()]);
     }
 
     /**

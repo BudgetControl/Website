@@ -1161,3 +1161,20 @@ img {
     text-decoration: none;
   }
 }
+
+.breadcrumbs {
+  color: $linkHover;
+  padding: 10px 0;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: small;
+  background-color: $white;
+
+  .container {
+    margin-left: 20px;
+    a {
+      color: $linkHover;
+      text-decoration: none;
+    }
+  }
+}

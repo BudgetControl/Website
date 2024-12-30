@@ -4,8 +4,11 @@ declare(strict_types=1);
 namespace Mlab\BudetControl\Services;
 
 use Illuminate\Support\Facades\Cache;
+use Mlab\BudetControl\Entities\Categories;
 use Mlab\BudetControl\Entities\Posts;
 use Mlab\BudetControl\Facade\WordpressCLient;
+use Mlabfactory\WordPress\Entities\Category;
+use Mlabfactory\WordPress\Entities\CategoryList;
 use Mlabfactory\WordPress\Entities\Media;
 
 class WordpressPost extends Wordpress {
@@ -18,9 +21,9 @@ class WordpressPost extends Wordpress {
      *
      * @return Posts A collection of post IDs.
      */
-    public static function getArticles(): Posts
+    public static function getArticles(?array $filter = null): Posts
     {
-        $wordpress = WordpressCLient::post()->list();
+        $wordpress = WordpressCLient::post()->list($filter);
 
         if(empty($wordpress->getPosts())) {
             return new Posts();
@@ -48,6 +51,17 @@ class WordpressPost extends Wordpress {
 
         return $postsId;
 
+    }
+
+    public static function getCategories(): Categories
+    {
+        $categories = WordpressCLient::category()->list();
+        $list = new Categories();
+
+        foreach($categories->getCategory() as $category) {
+            $list->addCategory($category->getSlug(), $category);
+        }
+        return $list;
     }
 
     /**
