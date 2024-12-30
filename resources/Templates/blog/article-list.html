@@ -1,4 +1,4 @@
-{% include 'partials/header.html' %}
+{% include 'partials/header.html' with {'seo' : seo } %}
 
 
 <section class="page layout_padding">
@@ -11,9 +11,10 @@
 			</div>
 			
 			
-			<div class="row">
+			<div class="row article-list">
 			{% for post in posts %}
 
+			<a href="{{ post.link}}">
 				<div class="col-md-4 ">
 					<div class="box ">
 						<div class="img-box-article">
@@ -24,12 +25,10 @@
 								{{ post.title }}
 							</h5>
 								{{ post.excerpt | raw}}
-							<a href="{{ post.link}}">
-								Read More
-							</a>
 						</div>
 					</div>
 				</div>
+			</a>
 			{% endfor %}
 			</div>
 

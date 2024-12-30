@@ -13,6 +13,7 @@ class RoutingController extends Controller
 
         $viewRenderer = new \Mlab\BudetControl\View\Home();
         $data = [];
+        $data['seo'] = ['title' => 'Budget Control - The best way to manage your money'];
         $viewRenderer->render($data);
     }
 
@@ -20,6 +21,7 @@ class RoutingController extends Controller
     {
         $viewRenderer = new \Mlab\BudetControl\View\About();
         $data = [];
+        $data['seo'] = ['title' => 'About Budget Control'];
         $viewRenderer->render($data);
     }
 
@@ -27,6 +29,7 @@ class RoutingController extends Controller
     {
         $viewRenderer = new \Mlab\BudetControl\View\Documentation();
         $data = [];
+        $data['seo'] = ['title' => 'Budget Control Documentation'];
         $viewRenderer->render($data);
     }
 
@@ -34,6 +37,7 @@ class RoutingController extends Controller
     {
         $viewRenderer = new \Mlab\BudetControl\View\ProfessionalUse();
         $data = [];
+        $data['seo'] = ['title' => 'Budget Control for professional use'];
         $viewRenderer->render($data);
     }
 
@@ -47,6 +51,7 @@ class RoutingController extends Controller
     {
         $viewRenderer = new \Mlab\BudetControl\View\Donations();
         $data = [];
+        $data['seo'] = ['title' => 'Donations'];
         $viewRenderer->render($data);
     }
 
@@ -54,6 +59,7 @@ class RoutingController extends Controller
     {
         $viewRenderer = new \Mlab\BudetControl\View\Thanks();
         $data = [];
+        $data['seo'] = ['title' => 'Thanks'];
         $viewRenderer->render($data);
     }
 
@@ -61,6 +67,7 @@ class RoutingController extends Controller
     {
         $viewRenderer = new \Mlab\BudetControl\View\Contact();
         $data = [];
+        $data['seo'] = ['title' => 'Contact'];
         $viewRenderer->render($data);
     }
 
@@ -68,6 +75,7 @@ class RoutingController extends Controller
     {
         $viewRenderer = new \Mlab\BudetControl\View\Terms();
         $data = [];
+        $data['seo'] = ['title' => 'Terms'];
         $viewRenderer->render($data);
     }
 
@@ -75,6 +83,7 @@ class RoutingController extends Controller
     {
         $viewRenderer = new \Mlab\BudetControl\View\Privacy();
         $data = [];
+        $data['seo'] = ['title' => 'Privacy'];
         $viewRenderer->render($data);
     }
 
@@ -82,6 +91,7 @@ class RoutingController extends Controller
     {
         $viewRenderer = new \Mlab\BudetControl\View\Contributors();
         $data = [];
+        $data['seo'] = ['title' => 'Contributors'];
         $viewRenderer->render($data);
     }
 

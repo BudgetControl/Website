@@ -1154,3 +1154,10 @@ img {
     font-size: large;
   }
 }
+
+.article-list {
+  a, a:hover, a:focus {
+    color: $black;
+    text-decoration: none;
+  }
+}

@@ -954,4 +954,9 @@ img.border-white {
   margin-top: 5px;
   color: #16a34a;
   font-size: large;
+}
+
+.article-list a, .article-list a:hover, .article-list a:focus {
+  color: #000000;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
