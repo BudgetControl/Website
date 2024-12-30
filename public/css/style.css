@@ -943,4 +943,15 @@ img.border-white {
 
 .small-text {
   font-size: small;
+}
+
+.article {
+  margin-top: 10px;
+  text-align: justify;
+}
+.article h3 {
+  font-weight: bold;
+  margin-top: 5px;
+  color: #16a34a;
+  font-size: large;
 }/*# sourceMappingURL=style.css.map */

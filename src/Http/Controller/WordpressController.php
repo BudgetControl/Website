@@ -28,10 +28,6 @@ class WordpressController extends BlogController
         $postPath = "/$category/$slug/";
         $page = new Article();
 
-        if(true === $this->hasCache($postPath)) {
-            return $this->fromCache($postPath, $page);
-        }
-        
         $postId = $this->postsId->getPostId($postPath);
 
         if(!$postId) {
@@ -40,10 +36,10 @@ class WordpressController extends BlogController
 
         $wordpress = WordpressCLient::post()->get($postId);
         $contentData = $wordpress->getContent();
-        $data = $contentData->toArray();
 
-        $this->saveInCache($postPath, $data);
-        
+        $data = $contentData->toArray();
+        $data['seo'] = $wordpress->getBody()['yoast_head_json'];
+
         return $page->render($data, $wordpress);
     }
 

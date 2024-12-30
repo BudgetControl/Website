@@ -8,9 +8,9 @@ use Mlabfactory\WordPress\Entities\Post;
 
 class Posts {
 
-    private array $posts;
+    private array $posts = [];
 
-    public function addPost(string $name, Post $post, Media $media): self
+    public function addPost(string $name, Post $post, ?Media $media): self
     {
         $name = md5($name);
         $this->posts[$name] = [
@@ -23,7 +23,7 @@ class Posts {
     public function getPostId(string $name): ?int
     {
         $name = md5($name);
-        return $this->posts[$name]['post']->getId();
+        return $this->posts[$name]['post']?->getId();
     }
 
     public function getPost(string $name): ?int
@@ -35,9 +35,9 @@ class Posts {
     /**
      * Get the value of media
      *
-     * @return Media
+     * @return ?Media
      */
-    public function getMedia(string $name): Media
+    public function getMedia(string $name): ?Media
     {
         $name = md5($name);
         return $this->posts[$name]['media'];

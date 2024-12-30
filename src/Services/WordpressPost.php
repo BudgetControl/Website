@@ -20,24 +20,31 @@ class WordpressPost extends Wordpress {
      */
     public static function getArticles(): Posts
     {
-        if(Cache::has(self::CACHE_KEY)) {
-            return Cache::get(self::CACHE_KEY);
+        $wordpress = WordpressCLient::post()->list();
+
+        if(empty($wordpress->getPosts())) {
+            return new Posts();
         }
 
-        $wordpress = WordpressCLient::post()->list();
         $posts = $wordpress->getPosts();
         $postsId = new Posts();
 
         /** @var \Mlabfactory\WordPress\Entities\Post $post */
         foreach ($posts as $post) {
             $postUrl = str_replace(WordpressCLient::getServer(), '', $post->getLink());
+            $media = $post->getFeaturedMedia();
+
+            if(empty($media)) {
+                $media = null;
+            } else {
+                $media = self::getMedia($media);
+            }
+
             $postsId->addPost(
                 $postUrl, $post,
-                self::getMedia($post->getFeaturedMedia())
+                $media
             );
         }
-
-        Cache::put(self::CACHE_KEY, $postsId, self::CACHE_TTL);
 
         return $postsId;
 

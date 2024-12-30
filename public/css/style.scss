@@ -1142,3 +1142,15 @@ img {
 .small-text {
   font-size: small;
 }
+
+.article {
+  margin-top:10px;
+  text-align: justify;
+
+  h3 {
+    font-weight: bold;
+    margin-top: 5px;
+    color: $primary1;
+    font-size: large;
+  }
+}

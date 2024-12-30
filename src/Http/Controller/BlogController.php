@@ -37,7 +37,7 @@ class BlogController
                 'excerpt' => $article->getContent()->getExcerpt(),
                 'date' => $article->getDate(),
                 'author' => $article->getAuthor(),
-                'media' => $media->getLink()
+                'media' => $media?->getLink()
             ];
         }
 
