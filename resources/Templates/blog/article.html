@@ -1,0 +1,34 @@
+{% include 'partials/header.html' with {'seo' : seo } %}
+
+<!-- documentation section -->
+
+<section class="breadcrumbs">
+  <div class="container">
+    <a href="/">H</a> &gt;
+    <a href="/blog">Blog</a> &gt;
+    <a href="/blog/{{category}}">{{category}}</a> &gt;
+    <span>{{ title }}</span>
+  </div>
+</section>
+
+<section class="page layout_padding">
+
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h1>
+        {{ title | raw }}
+      </h1>
+    </div>
+    <div class="container article">
+      <div class="text-box">
+        <div class="detail-box">
+        {{ content | raw }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end documentation section -->
+
+{% include 'partials/footer.html' %}

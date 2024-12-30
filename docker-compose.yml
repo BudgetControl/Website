@@ -3,7 +3,7 @@ version: '3'
 services:
     website:
       container_name: budgetcontrol-website
-      image: mlabfactory/php8-apache:v1.2.2
+      image: mlabfactory/php8-apache:v1.3
       volumes:
         - ./:/var/www/workdir
         - ./bin/apache/default.conf:/etc/apache2/sites-available/budgetcontrol.cloud.conf

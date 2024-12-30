@@ -1,0 +1,62 @@
+{% include 'partials/header.html' with {'seo' : seo } %}
+
+<section class="breadcrumbs">
+	{% if category %}
+	<div class="container">
+	  <a href="/">H</a> &gt;
+	  <a href="/blog">Blog</a> &gt;
+	  <span>{{category}}</span>
+	</div>
+	{% else %}
+
+	<div class="container">
+	  <a href="/">H</a> &gt;
+	  <span>Blog</span>
+	</div>
+
+	{% endif %}
+</section>
+  
+<section class="page layout_padding">
+	<div class="service_container">
+		<div class="container ">
+			<div class="heading_container heading_center">
+				<h2>
+					Our <span>Blog</span>
+				</h2>
+			</div>
+			
+			
+			<div class="row article-list">
+			{% for post in posts %}
+
+			<a href="{{ post.link}}">
+				<div class="col-md-4 ">
+					<div class="box ">
+						<div class="img-box-article">
+							<img src="{{ post.media }}" alt="{{ post.title }}">
+						</div>
+						<div class="detail-box">
+							<h5>
+								{{ post.title }}
+							</h5>
+								{{ post.excerpt | raw}}
+						</div>
+					</div>
+				</div>
+			</a>
+			{% endfor %}
+			</div>
+
+			
+			<div class="btn-box">
+				<!-- <a href="">
+					View All
+				</a> -->
+			</div>
+		</div>
+	</div>
+</section>
+
+
+{% include 'partials/footer.html' %}

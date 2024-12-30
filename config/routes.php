@@ -17,3 +17,13 @@ $app->post('/be/api/contact', \Mlab\BudetControl\Http\Controller\SubscribeContro
 $app->get('/terms', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':terms');
 $app->get('/privacy', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':privacy');
 $app->get('/team/contributors', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':contributors');
+
+
+/** WORDPRESS BLOG URLs */
+$app->group('', function () use ($app) {
+    $app->get('/blog', \Mlab\BudetControl\Http\Controller\BlogController::class . ':index');
+    $app->get('/blog/articles/{category}', \Mlab\BudetControl\Http\Controller\WordpressController::class . ':showByCategory');
+    $app->get('/blog/articles/{category}/{slug}', \Mlab\BudetControl\Http\Controller\WordpressController::class . ':show');
+})->add(new \Mlab\BudetControl\Http\Middleware\CachingMiddleware());
+
+$app->get('/api/wordpress/posts/clear-cache', \Mlab\BudetControl\Http\Controller\WordpressController::class . ':postCache')->add(new \Mlab\BudetControl\Http\Middleware\AuthApiMiddleware());

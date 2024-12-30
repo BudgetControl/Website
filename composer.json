@@ -6,6 +6,10 @@
         "mlabfactory/libs-mailer": {
             "type": "vcs",
             "url": "https://github.com/mlabfactory/Libs_Mailer.git"
+        },
+        "mlabfactory/wordpress-php-sdk": {
+            "type": "vcs",
+            "url": "https://github.com/mlabfactory/WordPress-PHP-SDK.git"
         }
     },
     "require": {
@@ -17,7 +21,10 @@
         "twig/twig": "^3.8",
         "slim/slim": "^4.0",
         "robmorgan/phinx": "^0.16.0",
-        "mlabfactory/libs-mailer": "^1.1"
+        "mlabfactory/libs-mailer": "^1.1",
+        "mlabfactory/wordpress-php-sdk": "dev-master",
+        "illuminate/cache": "^10.48",
+        "illuminate/filesystem": "^10.48"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.5"
@@ -25,7 +32,10 @@
     "autoload": {
         "psr-4": {
             "Mlab\\BudetControl\\": "src/"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "authors": [
         {
@@ -33,5 +43,6 @@
             "email": "marco.defelice@gmail.com"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
