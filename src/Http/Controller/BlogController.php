@@ -33,7 +33,7 @@ class BlogController
 
             $articles[] = [
                 'title' => $article->getContent()->getTitle(),
-                'link' => path_to($article->getLink(), 'articles'),
+                'link' => path_to($article->getLink(), 'blog'),
                 'excerpt' => $article->getContent()->getExcerpt(),
                 'date' => $article->getDate(),
                 'author' => $article->getAuthor(),
