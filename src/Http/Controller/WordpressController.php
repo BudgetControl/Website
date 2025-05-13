@@ -76,14 +76,14 @@ class WordpressController extends BlogController
             
             /** @var Media $media */
             $media = $post['media'];
-
+            
             $articles[] = [
                 'title' => $article->getContent()->getTitle(),
                 'link' => path_to($article->getLink(), 'blog'),
-                'excerpt' => $article->getContent()->getExcerpt(),
+                'excerpt' => $this->replaceUrl($article->getContent()->getExcerpt()),
                 'date' => $article->getDate(),
                 'author' => $article->getAuthor(),
-                'media' => $media?->getLink()
+                'media' => $this->replaceUrl($media?->getLink())
             ];
         }
 

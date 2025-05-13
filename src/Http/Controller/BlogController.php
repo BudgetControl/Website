@@ -34,10 +34,10 @@ class BlogController
             $articles[] = [
                 'title' => $article->getContent()->getTitle(),
                 'link' => path_to($article->getLink(), 'blog'),
-                'excerpt' => $article->getContent()->getExcerpt(),
+                'excerpt' => $this->replaceUrl($article->getContent()->getExcerpt()),
                 'date' => $article->getDate(),
                 'author' => $article->getAuthor(),
-                'media' => $media?->getLink()
+                'media' => $this->replaceUrl($media?->getPath()),
             ];
         }
 
@@ -83,5 +83,20 @@ class BlogController
     protected function hasCache(string $cacheKey): bool
     {
         return Cache::has($cacheKey);
+    }
+
+    /**
+     * Replaces a URL with a processed version.
+     *
+     * This method takes a URL string and performs necessary transformations
+     * or modifications according to the application's requirements.
+     *
+     * @param string $content The original URL to be processed
+     * @return string The processed URL after replacements
+     */
+    protected function replaceUrl(string $content): string
+    {
+        $url = env("APP_URL");
+        return str_replace(env("WORDPRESS_URL"), $url, $content);
     }
 }

@@ -22,7 +22,7 @@
         "slim/slim": "^4.0",
         "robmorgan/phinx": "^0.16.0",
         "mlabfactory/libs-mailer": "^1.1",
-        "mlabfactory/wordpress-php-sdk": "dev-master",
+        "mlabfactory/wordpress-php-sdk": "1.0-RC",
         "illuminate/cache": "^10.48",
         "illuminate/filesystem": "^10.48"
     },

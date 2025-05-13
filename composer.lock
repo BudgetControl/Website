@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e57715a1fbbae3c07115d6ab45cfaeaa",
+    "content-hash": "c1a43a64fc92c0aa778fd3fa41ae1c47",
     "packages": [
         {
             "name": "brick/math",
@@ -1705,16 +1705,16 @@
         },
         {
             "name": "mlabfactory/wordpress-php-sdk",
-            "version": "dev-master",
+            "version": "1.0-RC",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mlabfactory/WordPress-PHP-SDK.git",
-                "reference": "02631f43d0013bd9e291d584f3f5d01956ec0e4d"
+                "reference": "82d9fc0f2fff09be8c60478e5c643fa142c1384b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mlabfactory/WordPress-PHP-SDK/zipball/02631f43d0013bd9e291d584f3f5d01956ec0e4d",
-                "reference": "02631f43d0013bd9e291d584f3f5d01956ec0e4d",
+                "url": "https://api.github.com/repos/mlabfactory/WordPress-PHP-SDK/zipball/82d9fc0f2fff09be8c60478e5c643fa142c1384b",
+                "reference": "82d9fc0f2fff09be8c60478e5c643fa142c1384b",
                 "shasum": ""
             },
             "require": {
@@ -1726,7 +1726,6 @@
             "require-dev": {
                 "phpunit/phpunit": "^10.5"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "classmap": [
@@ -1755,7 +1754,7 @@
                 "wordpress"
             ],
             "support": {
-                "source": "https://github.com/mlabfactory/WordPress-PHP-SDK/tree/master"
+                "source": "https://github.com/mlabfactory/WordPress-PHP-SDK/tree/1.0-RC"
             },
             "funding": [
                 {
@@ -1763,7 +1762,7 @@
                     "url": "https://github.com/Mlabfactory"
                 }
             ],
-            "time": "2024-12-30T15:58:47+00:00"
+            "time": "2025-05-13T09:54:28+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -6778,9 +6777,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "mlabfactory/wordpress-php-sdk": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {},
