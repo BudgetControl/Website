@@ -49,6 +49,10 @@ class WordpressController extends BlogController
             'slug' => $this->categories->getbyname($category)->getSlug()
         ];
 
+        $data['excerpt'] = $this->replaceUrl($data['excerpt']);
+        $data['content'] = $this->replaceUrl($data['content']);
+        $data['seo'] = $this->replaceUrlObject($data['seo']);
+
         return $page->render($data, $wordpress);
     }
 
@@ -116,5 +120,38 @@ class WordpressController extends BlogController
             return $response->withStatus(500);
         }
         
+    }
+
+    /**
+     * Recursively replaces URLs in an object or array.
+     *
+     * @param array|object $data The data structure to process
+     * @return array|object The processed data with replaced URLs
+     */
+    private function replaceUrlObject($data)
+    {
+        // If data is an array, iterate through it
+        if (is_array($data)) {
+            foreach ($data as $key => $value) {
+                $data[$key] = $this->replaceUrlObject($value);
+            }
+            return $data;
+        }
+        
+        // If data is an object, iterate through its properties
+        if (is_object($data)) {
+            foreach (get_object_vars($data) as $key => $value) {
+                $data->{$key} = $this->replaceUrlObject($value);
+            }
+            return $data;
+        }
+        
+        // If it's a string, replace the URL
+        if (is_string($data)) {
+            return $this->replaceUrl($data);
+        }
+        
+        // Otherwise, return the value unchanged
+        return $data;
     }
 }
