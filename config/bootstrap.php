@@ -1,5 +1,4 @@
 <?php
-require_once __DIR__.'/../vendor/autoload.php';
 
 use Monolog\Level;
 use Illuminate\Database\Capsule\Manager as Capsule;
@@ -34,10 +33,13 @@ require_once __DIR__ . '/wordpress.php';
 /** CACHE SYSTEM */
 require_once __DIR__ . '/cache.php';
 
+$routeSiteService = new \Mlab\BudetControl\Services\RouteSiteService($app);
+
 // Set up the Facade application
 Illuminate\Support\Facades\Facade::setFacadeApplication([
     'log' => $logger,
     'mail' => $mail,
     'wordpress-client' => $wordpressClient,
-    'cache' => $cache
+    'cache' => $cache,
+    'route-site' => $routeSiteService,
 ]);

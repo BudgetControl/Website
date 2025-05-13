@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.budgetcontrol.com/sitemap.xml
+
+# Allow Google Image crawler
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Allow Google Mobile crawler
+User-agent: Googlebot-Mobile
+Allow: /
+
+# Disallow specific directories
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /includes/
+
+# Crawl delay to prevent server overload
+Crawl-delay: 10
