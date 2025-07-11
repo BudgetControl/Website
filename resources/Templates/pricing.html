@@ -1,0 +1,162 @@
+{% include 'partials/header.html' with {'seo' : seo } %}
+
+<!-- pricing section -->
+<section class="pricing_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Choose Your <span>Plan</span>
+      </h2>
+      <p>
+        Select the perfect plan for your financial management needs. All plans include core features with scalable options.
+      </p>
+    </div>
+    <div class="pricing_container">
+      <div class="row">
+        <!-- Free Plan -->
+        <div class="col-md-6 col-lg-4">
+          <div class="pricing_box">
+            <div class="plan_header">
+              <h3>Free</h3>
+              <div class="price">
+                <span class="currency">€</span>
+                <span class="amount">0</span>
+                <span class="period">/month</span>
+              </div>
+              <p class="plan_description">Perfect for personal use</p>
+            </div>
+            <div class="plan_features">
+              <ul>
+                <li><i class="fa fa-check"></i> Up to 3 accounts</li>
+                <li><i class="fa fa-check"></i> Basic expense tracking</li>
+                <li><i class="fa fa-check"></i> Monthly reports</li>
+                <li><i class="fa fa-check"></i> Mobile app access</li>
+                <li><i class="fa fa-check"></i> Community support</li>
+                <li class="unavailable"><i class="fa fa-times"></i> Advanced analytics</li>
+                <li class="unavailable"><i class="fa fa-times"></i> API access</li>
+                <li class="unavailable"><i class="fa fa-times"></i> Priority support</li>
+              </ul>
+            </div>
+            <div class="plan_action">
+              <a href="https://app.budgetcontrol.cloud" class="btn btn-pricing">Get Started</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pro Plan -->
+        <div class="col-md-6 col-lg-4">
+          <div class="pricing_box featured">
+            <div class="popular_badge">Most Popular</div>
+            <div class="plan_header">
+              <h3>Pro</h3>
+              <div class="price">
+                <span class="currency">€</span>
+                <span class="amount">9</span>
+                <span class="period">/month</span>
+              </div>
+              <p class="plan_description">Ideal for power users</p>
+            </div>
+            <div class="plan_features">
+              <ul>
+                <li><i class="fa fa-check"></i> Unlimited accounts</li>
+                <li><i class="fa fa-check"></i> Advanced expense tracking</li>
+                <li><i class="fa fa-check"></i> Custom categories</li>
+                <li><i class="fa fa-check"></i> Detailed analytics</li>
+                <li><i class="fa fa-check"></i> Export to CSV/PDF</li>
+                <li><i class="fa fa-check"></i> Budget goals & alerts</li>
+                <li><i class="fa fa-check"></i> Email support</li>
+                <li class="unavailable"><i class="fa fa-times"></i> API access</li>
+              </ul>
+            </div>
+            <div class="plan_action">
+              <a href="https://app.budgetcontrol.cloud" class="btn btn-pricing btn-featured">Start Free Trial</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Plan -->
+        <div class="col-md-6 col-lg-4">
+          <div class="pricing_box">
+            <div class="plan_header">
+              <h3>Business</h3>
+              <div class="price">
+                <span class="currency">€</span>
+                <span class="amount">29</span>
+                <span class="period">/month</span>
+              </div>
+              <p class="plan_description">For teams and businesses</p>
+            </div>
+            <div class="plan_features">
+              <ul>
+                <li><i class="fa fa-check"></i> Everything in Pro</li>
+                <li><i class="fa fa-check"></i> Multi-user access</li>
+                <li><i class="fa fa-check"></i> Team collaboration</li>
+                <li><i class="fa fa-check"></i> API access</li>
+                <li><i class="fa fa-check"></i> Custom integrations</li>
+                <li><i class="fa fa-check"></i> Advanced reporting</li>
+                <li><i class="fa fa-check"></i> Priority support</li>
+                <li><i class="fa fa-check"></i> Phone support</li>
+              </ul>
+            </div>
+            <div class="plan_action">
+              <a href="https://app.budgetcontrol.cloud" class="btn btn-pricing">Contact Sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq_section">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="heading_container heading_center">
+            <h3>Frequently Asked Questions</h3>
+          </div>
+          <div class="faq_container">
+            <div class="faq_item">
+              <div class="faq_question">
+                <h5>Can I switch plans at any time?</h5>
+                <i class="fa fa-plus"></i>
+              </div>
+              <div class="faq_answer">
+                <p>Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.</p>
+              </div>
+            </div>
+            <div class="faq_item">
+              <div class="faq_question">
+                <h5>Is there a free trial for paid plans?</h5>
+                <i class="fa fa-plus"></i>
+              </div>
+              <div class="faq_answer">
+                <p>Yes, we offer a 14-day free trial for all paid plans. No credit card required to start.</p>
+              </div>
+            </div>
+            <div class="faq_item">
+              <div class="faq_question">
+                <h5>What payment methods do you accept?</h5>
+                <i class="fa fa-plus"></i>
+              </div>
+              <div class="faq_answer">
+                <p>We accept all major credit cards, PayPal, and bank transfers for annual plans.</p>
+              </div>
+            </div>
+            <div class="faq_item">
+              <div class="faq_question">
+                <h5>Can I cancel my subscription anytime?</h5>
+                <i class="fa fa-plus"></i>
+              </div>
+              <div class="faq_answer">
+                <p>Yes, you can cancel your subscription at any time. You'll continue to have access until the end of your current billing period.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- end pricing section -->
+
+{% include 'partials/footer.html' %}

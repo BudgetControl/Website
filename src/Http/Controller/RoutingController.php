@@ -95,4 +95,12 @@ class RoutingController extends Controller
         $viewRenderer->render($data);
     }
 
+    public function pricing()
+    {
+        $viewRenderer = new \Mlab\BudetControl\View\Pricing();
+        $data = [];
+        $data['seo'] = ['title' => 'Pricing - Budget Control'];
+        $viewRenderer->render($data);
+    }
+
 }

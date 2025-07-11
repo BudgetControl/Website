@@ -1026,7 +1026,63 @@ img {
   .about_section .img-box {
     margin-bottom: 45px;
   }
-
+  
+  .pricing_section {
+    .pricing_container {
+      .pricing_box {
+        &.featured {
+          transform: none;
+          margin-bottom: 40px;
+          
+          &:hover {
+            transform: translateY(-5px);
+          }
+        }
+        
+        .plan_header {
+          padding: 30px 20px;
+          
+          .price .amount {
+            font-size: 40px;
+          }
+        }
+        
+        .plan_features {
+          padding: 20px;
+        }
+        
+        .plan_action {
+          padding: 20px;
+        }
+      }
+    }
+    
+    .faq_section {
+      margin-top: 60px;
+      padding-top: 40px;
+      
+      .faq_container {
+        .faq_item {
+          .faq_question {
+            padding: 15px 20px;
+            
+            h5 {
+              font-size: 16px;
+            }
+          }
+          
+          .faq_answer {
+            padding: 0 20px;
+            
+            p {
+              padding: 15px 0;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 576px) {
@@ -1178,3 +1234,237 @@ img {
     }
   }
 }
+
+// pricing section
+.pricing_section {
+  background-color: #f8f9fa;
+  
+  .pricing_container {
+    margin-top: 60px;
+    
+    .pricing_box {
+      background: $white;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      position: relative;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+      
+      &.featured {
+        transform: scale(1.05);
+        border: 3px solid $primary1;
+        
+        &:hover {
+          transform: scale(1.05) translateY(-5px);
+        }
+        
+        .plan_header {
+          background: linear-gradient(135deg, $primary1, $primary2);
+          color: $white;
+          
+          .price .amount {
+            color: $white;
+          }
+          
+          .price .currency,
+          .price .period {
+            color: rgba(255, 255, 255, 0.8);
+          }
+          
+          .plan_description {
+            color: rgba(255, 255, 255, 0.9);
+          }
+        }
+      }
+      
+      .popular_badge {
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        background: $titleText;
+        color: $black;
+        padding: 5px 40px;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transform: rotate(45deg);
+        z-index: 10;
+      }
+      
+      .plan_header {
+        padding: 40px 30px;
+        text-align: center;
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        
+        h3 {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 20px;
+          color: $textCol;
+        }
+        
+        .price {
+          display: flex;
+          justify-content: center;
+          align-items: baseline;
+          margin-bottom: 15px;
+          
+          .currency {
+            font-size: 20px;
+            font-weight: 600;
+            color: $primary1;
+          }
+          
+          .amount {
+            font-size: 48px;
+            font-weight: bold;
+            color: $primary1;
+            margin: 0 5px;
+          }
+          
+          .period {
+            font-size: 16px;
+            color: #666;
+          }
+        }
+        
+        .plan_description {
+          color: #666;
+          font-size: 14px;
+          margin: 0;
+        }
+      }
+      
+      .plan_features {
+        padding: 30px;
+        
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          
+          li {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+            
+            &:last-child {
+              border-bottom: none;
+            }
+            
+            i {
+              margin-right: 12px;
+              width: 16px;
+              text-align: center;
+            }
+            
+            .fa-check {
+              color: $primary1;
+            }
+            
+            .fa-times {
+              color: #ccc;
+            }
+            
+            &.unavailable {
+              color: #999;
+            }
+          }
+        }
+      }
+      
+      .plan_action {
+        padding: 30px;
+        text-align: center;
+        
+        .btn-pricing {
+          @include hero_btn($primary2, $white, 15px, 40px, 25px);
+          width: 100%;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          
+          &.btn-featured {
+            @include hero_btn($primary1, $white, 15px, 40px, 25px);
+          }
+        }
+      }
+    }
+  }
+  
+  .faq_section {
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 1px solid #e9ecef;
+    
+    .faq_container {
+      margin-top: 40px;
+      
+      .faq_item {
+        background: $white;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        
+        .faq_question {
+          padding: 20px 25px;
+          background: #f8f9fa;
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: #e9ecef;
+          }
+          
+          h5 {
+            margin: 0;
+            font-weight: 600;
+            color: $textCol;
+          }
+          
+          i {
+            color: $primary1;
+            transition: transform 0.3s ease;
+          }
+        }
+        
+        .faq_answer {
+          padding: 0 25px;
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.3s ease;
+          
+          p {
+            padding: 20px 0;
+            margin: 0;
+            color: #666;
+            line-height: 1.6;
+          }
+        }
+        
+        &.active {
+          .faq_question i {
+            transform: rotate(45deg);
+          }
+          
+          .faq_answer {
+            max-height: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// end pricing section

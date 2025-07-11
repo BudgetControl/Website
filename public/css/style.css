@@ -247,7 +247,7 @@ a:focus {
   border: none;
 }
 .slider_section .detail-box .btn-box .btn1:hover {
-  background-color: #0d602b;
+  background-color: rgb(12.9027027027, 95.5972972973, 43.4);
 }
 .slider_section .detail-box .btn-box .btn2 {
   display: inline-block;
@@ -358,7 +358,7 @@ a:focus {
   border: none;
 }
 .service_section .btn-box a:hover {
-  background-color: #0d602b;
+  background-color: rgb(12.9027027027, 95.5972972973, 43.4);
 }
 
 .full_page {
@@ -391,7 +391,7 @@ a:focus {
   margin-top: 15px;
 }
 .full_page .detail-box a:hover {
-  background-color: #0d602b;
+  background-color: rgb(12.9027027027, 95.5972972973, 43.4);
 }
 
 .page {
@@ -461,7 +461,7 @@ a:focus {
   border: none;
 }
 .page .btn-box a:hover {
-  background-color: #0d602b;
+  background-color: rgb(12.9027027027, 95.5972972973, 43.4);
 }
 
 /*team section */
@@ -488,7 +488,7 @@ a:focus {
   overflow: hidden;
   transition: all 0.1s;
   margin-top: 45px;
-  background: linear-gradient(to bottom, #05a573, #06af7a);
+  background: linear-gradient(to bottom, rgb(5.4935483871, 164.8064516129, 115.364516129), rgb(5.8225806452, 174.6774193548, 122.2741935484));
 }
 .team_section .team_container .box .img-box {
   display: flex;
@@ -652,9 +652,6 @@ a:focus {
   color: #ffffff;
   outline: none;
 }
-.info_section form input::-moz-placeholder {
-  color: #ffffff;
-}
 .info_section form input::placeholder {
   color: #ffffff;
 }
@@ -671,7 +668,7 @@ a:focus {
   margin-top: 15px;
 }
 .info_section form button:hover {
-  background-color: #0d602b;
+  background-color: rgb(12.9027027027, 95.5972972973, 43.4);
 }
 
 /* footer section*/
@@ -778,9 +775,6 @@ a:focus {
   color: #ffffff;
   outline: none;
 }
-.about_section form input::-moz-placeholder {
-  color: #ffffff;
-}
 .about_section form input::placeholder {
   color: #ffffff;
 }
@@ -797,7 +791,7 @@ a:focus {
   margin-top: 15px;
 }
 .about_section form button:hover {
-  background-color: #0d602b;
+  background-color: rgb(12.9027027027, 95.5972972973, 43.4);
 }
 
 img.img-rounded {
@@ -842,6 +836,42 @@ img.border-white {
 @media (max-width: 768px) {
   .about_section .img-box {
     margin-bottom: 45px;
+  }
+  .pricing_section .pricing_container .pricing_box.featured {
+    transform: none;
+    margin-bottom: 40px;
+  }
+  .pricing_section .pricing_container .pricing_box.featured:hover {
+    transform: translateY(-5px);
+  }
+  .pricing_section .pricing_container .pricing_box .plan_header {
+    padding: 30px 20px;
+  }
+  .pricing_section .pricing_container .pricing_box .plan_header .price .amount {
+    font-size: 40px;
+  }
+  .pricing_section .pricing_container .pricing_box .plan_features {
+    padding: 20px;
+  }
+  .pricing_section .pricing_container .pricing_box .plan_action {
+    padding: 20px;
+  }
+  .pricing_section .faq_section {
+    margin-top: 60px;
+    padding-top: 40px;
+  }
+  .pricing_section .faq_section .faq_container .faq_item .faq_question {
+    padding: 15px 20px;
+  }
+  .pricing_section .faq_section .faq_container .faq_item .faq_question h5 {
+    font-size: 16px;
+  }
+  .pricing_section .faq_section .faq_container .faq_item .faq_answer {
+    padding: 0 20px;
+  }
+  .pricing_section .faq_section .faq_container .faq_item .faq_answer p {
+    padding: 15px 0;
+    font-size: 14px;
   }
 }
 @media (max-width: 576px) {
@@ -908,7 +938,7 @@ img.border-white {
   margin-top: 15px;
 }
 .contact-form button:hover {
-  background-color: #0d602b;
+  background-color: rgb(12.9027027027, 95.5972972973, 43.4);
 }
 .contact-form input[type=checkbox] {
   appearance: none;
@@ -975,4 +1005,214 @@ img.border-white {
 .breadcrumbs .container a {
   color: #365314;
   text-decoration: none;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.pricing_section {
+  background-color: #f8f9fa;
+}
+.pricing_section .pricing_container {
+  margin-top: 60px;
+}
+.pricing_section .pricing_container .pricing_box {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.pricing_section .pricing_container .pricing_box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+.pricing_section .pricing_container .pricing_box.featured {
+  transform: scale(1.05);
+  border: 3px solid #16a34a;
+}
+.pricing_section .pricing_container .pricing_box.featured:hover {
+  transform: scale(1.05) translateY(-5px);
+}
+.pricing_section .pricing_container .pricing_box.featured .plan_header {
+  background: linear-gradient(135deg, #16a34a, #059669);
+  color: #ffffff;
+}
+.pricing_section .pricing_container .pricing_box.featured .plan_header .price .amount {
+  color: #ffffff;
+}
+.pricing_section .pricing_container .pricing_box.featured .plan_header .price .currency,
+.pricing_section .pricing_container .pricing_box.featured .plan_header .price .period {
+  color: rgba(255, 255, 255, 0.8);
+}
+.pricing_section .pricing_container .pricing_box.featured .plan_header .plan_description {
+  color: rgba(255, 255, 255, 0.9);
+}
+.pricing_section .pricing_container .pricing_box .popular_badge {
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  background: #45ff8a;
+  color: #000000;
+  padding: 5px 40px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transform: rotate(45deg);
+  z-index: 10;
+}
+.pricing_section .pricing_container .pricing_box .plan_header {
+  padding: 40px 30px;
+  text-align: center;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+.pricing_section .pricing_container .pricing_box .plan_header h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1f1f1f;
+}
+.pricing_section .pricing_container .pricing_box .plan_header .price {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 15px;
+}
+.pricing_section .pricing_container .pricing_box .plan_header .price .currency {
+  font-size: 20px;
+  font-weight: 600;
+  color: #16a34a;
+}
+.pricing_section .pricing_container .pricing_box .plan_header .price .amount {
+  font-size: 48px;
+  font-weight: bold;
+  color: #16a34a;
+  margin: 0 5px;
+}
+.pricing_section .pricing_container .pricing_box .plan_header .price .period {
+  font-size: 16px;
+  color: #666;
+}
+.pricing_section .pricing_container .pricing_box .plan_header .plan_description {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+.pricing_section .pricing_container .pricing_box .plan_features {
+  padding: 30px;
+}
+.pricing_section .pricing_container .pricing_box .plan_features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pricing_section .pricing_container .pricing_box .plan_features ul li {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.pricing_section .pricing_container .pricing_box .plan_features ul li:last-child {
+  border-bottom: none;
+}
+.pricing_section .pricing_container .pricing_box .plan_features ul li i {
+  margin-right: 12px;
+  width: 16px;
+  text-align: center;
+}
+.pricing_section .pricing_container .pricing_box .plan_features ul li .fa-check {
+  color: #16a34a;
+}
+.pricing_section .pricing_container .pricing_box .plan_features ul li .fa-times {
+  color: #ccc;
+}
+.pricing_section .pricing_container .pricing_box .plan_features ul li.unavailable {
+  color: #999;
+}
+.pricing_section .pricing_container .pricing_box .plan_action {
+  padding: 30px;
+  text-align: center;
+}
+.pricing_section .pricing_container .pricing_box .plan_action .btn-pricing {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: #059669;
+  color: #ffffff;
+  border-radius: 25px;
+  transition: all 0.3s;
+  border: none;
+  width: 100%;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.pricing_section .pricing_container .pricing_box .plan_action .btn-pricing:hover {
+  background-color: rgb(2.5322580645, 75.9677419355, 53.1774193548);
+}
+.pricing_section .pricing_container .pricing_box .plan_action .btn-pricing.btn-featured {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: #16a34a;
+  color: #ffffff;
+  border-radius: 25px;
+  transition: all 0.3s;
+  border: none;
+}
+.pricing_section .pricing_container .pricing_box .plan_action .btn-pricing.btn-featured:hover {
+  background-color: rgb(12.9027027027, 95.5972972973, 43.4);
+}
+.pricing_section .faq_section {
+  margin-top: 80px;
+  padding-top: 60px;
+  border-top: 1px solid #e9ecef;
+}
+.pricing_section .faq_section .faq_container {
+  margin-top: 40px;
+}
+.pricing_section .faq_section .faq_container .faq_item {
+  background: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.pricing_section .faq_section .faq_container .faq_item .faq_question {
+  padding: 20px 25px;
+  background: #f8f9fa;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.pricing_section .faq_section .faq_container .faq_item .faq_question:hover {
+  background: #e9ecef;
+}
+.pricing_section .faq_section .faq_container .faq_item .faq_question h5 {
+  margin: 0;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+.pricing_section .faq_section .faq_container .faq_item .faq_question i {
+  color: #16a34a;
+  transition: transform 0.3s ease;
+}
+.pricing_section .faq_section .faq_container .faq_item .faq_answer {
+  padding: 0 25px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.pricing_section .faq_section .faq_container .faq_item .faq_answer p {
+  padding: 20px 0;
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+}
+.pricing_section .faq_section .faq_container .faq_item.active .faq_question i {
+  transform: rotate(45deg);
+}
+.pricing_section .faq_section .faq_container .faq_item.active .faq_answer {
+  max-height: 200px;
+}
+
+/*# sourceMappingURL=style.css.map */
