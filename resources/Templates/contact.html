@@ -12,12 +12,12 @@
       </p>
     </div>
     
-    <div class="row">
+    <div class="row margin-top-45">
       <div class="col-md-8 offset-md-2">
-        <div class="contact_form">
-          <div id="form-messages"></div>
+        <div class="contact_form card border-radius shadow p-4">
+          <div id="form-messages" class="mb-3"></div>
           
-          <form id="contact-form" method="POST" action="/contact/send">
+          <form id="contact-form" method="POST" action="/api/contact/send">
             <div class="form-group">
               <label for="name">Name *</label>
               <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
@@ -41,13 +41,13 @@
             <div class="form-group form-check">
               <input type="checkbox" class="form-check-input" id="privacy" name="privacy" required>
               <label class="form-check-label" for="privacy">
-                I accept the <a href="https://dev.budgetcontrol.cloud/privacy" target="_blank">privacy policy</a> *
+                I accept the <a href="https://dev.budgetcontrol.cloud/privacy" target="_blank" class="privacy-link" style="color: #16a34a; text-decoration: underline; font-weight: 500;">privacy policy</a> *
               </label>
             </div>
             
             <div class="btn_box">
-              <button type="submit" class="btn btn-primary" id="submit-btn">
-                <span class="btn-text">Send Message</span>
+              <button type="submit" id="submit-btn" style="background-color: #16a34a; color: #ffffff; border: none; width: 100%; padding: 10px 55px; transition: all 0.3s;">
+                <span class="btn-text"><i class="fa fa-paper-plane"></i> Send Message</span>
                 <span class="btn-loading" style="display: none;">
                   <i class="fa fa-spinner fa-spin"></i> Sending...
                 </span>
@@ -77,21 +77,30 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     
     const formData = new FormData(this);
     
-    fetch('/contact/send', {
-        method: 'POST',
-        body: formData
+    // Convert FormData to JSON
+    const formObject = {};
+    formData.forEach((value, key) => {
+      formObject[key] = value;
+    });
+
+    fetch('/api/contact/send', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formObject)
     })
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            messagesDiv.innerHTML = '<div class="alert alert-success">Message sent successfully! We\'ll get back to you soon.</div>';
+            messagesDiv.innerHTML = '<div class="alert alert-success border-radius"><i class="fa fa-check-circle"></i> Message sent successfully! We\'ll get back to you soon.</div>';
             this.reset();
         } else {
-            messagesDiv.innerHTML = '<div class="alert alert-danger">Error: ' + (data.message || 'Failed to send message. Please try again.') + '</div>';
+            messagesDiv.innerHTML = '<div class="alert alert-danger border-radius"><i class="fa fa-exclamation-circle"></i> Error: ' + (data.message || 'Failed to send message. Please try again.') + '</div>';
         }
     })
     .catch(error => {
-        messagesDiv.innerHTML = '<div class="alert alert-danger">Network error. Please try again later.</div>';
+        messagesDiv.innerHTML = '<div class="alert alert-danger border-radius"><i class="fa fa-exclamation-circle"></i> Network error. Please try again later.</div>';
     })
     .finally(() => {
         // Reset button state
@@ -100,7 +109,105 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         btnLoading.style.display = 'none';
     });
 });
+
+// Highlight input fields when focused
+document.querySelectorAll('.form-control').forEach(input => {
+    input.addEventListener('focus', function() {
+        this.style.borderColor = '#16a34a';
+        this.style.boxShadow = '0 0 0 0.2rem rgba(22, 163, 74, 0.25)';
+    });
+    
+    input.addEventListener('blur', function() {
+        this.style.borderColor = '';
+        this.style.boxShadow = '';
+    });
+});
+
+// Checkbox style enhancement
+document.getElementById('privacy').addEventListener('change', function() {
+    if (this.checked) {
+        this.style.backgroundColor = '#16a34a';
+        this.style.borderColor = '#16a34a';
+    } else {
+        this.style.backgroundColor = '';
+        this.style.borderColor = '';
+    }
+});
 </script>
+
+<style>
+.contact_section {
+  background-color: #ffffff;
+  color: #1f1f1f;
+}
+
+.contact_form {
+  background-color: #ffffff;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #059669;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 0.2rem rgba(22, 163, 74, 0.25);
+}
+
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+}
+
+.privacy-link:hover {
+  color: #059669 !important;
+  text-decoration: underline;
+}
+
+#submit-btn {
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+#submit-btn:hover {
+  background-color: #059669 !important;
+}
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.alert-success {
+  background-color: #d1fae5;
+  border-color: #16a34a;
+  color: #065f46;
+}
+
+.alert-danger {
+  background-color: #fee2e2;
+  border-color: #ef4444;
+  color: #b91c1c;
+}
+
+.alert i {
+  margin-right: 8px;
+}
+</style>
 
 <!-- end contact section -->
 

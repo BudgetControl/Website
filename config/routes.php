@@ -16,9 +16,6 @@ $app->get('/terms', \Mlab\BudetControl\Http\Controller\RoutingController::class 
 $app->get('/privacy', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':privacy');
 $app->get('/team/contributors', \Mlab\BudetControl\Http\Controller\RoutingController::class . ':contributors');
 
-
-
-
 /** WORDPRESS BLOG URLs */
 $app->group('blog', function () use ($app) {
     $app->get('/blog', \Mlab\BudetControl\Http\Controller\BlogController::class . ':index');
@@ -35,3 +32,8 @@ $app->group('api', function () use ($app) {
 
 // sitemap
 $app->get('/sitemap.xml', \Mlab\BudetControl\Http\Controller\SitemapController::class . ':index');
+
+// Checkout routes
+$app->get('/checkout', \Mlab\BudetControl\Http\Controller\CheckoutController::class . ':index');
+$app->post('/checkout/create-payment-intent', \Mlab\BudetControl\Http\Controller\CheckoutController::class . ':createPaymentIntent');
+$app->get('/checkout/success', \Mlab\BudetControl\Http\Controller\CheckoutController::class . ':success');

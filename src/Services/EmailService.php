@@ -3,10 +3,12 @@
 
 namespace Mlab\BudetControl\Services;
 
+use Mlab\BudetControl\View\Mail\ViewMailInterface;
+
 class EmailService
 {
     
-    public function sendEmailViaCurl($data)
+    public function sendEmailViaCurl(ViewMailInterface $message, string $to)
     {
         $mailer_path = $_ENV['MAILER_PATH'] ?? null;
         
@@ -16,10 +18,10 @@ class EmailService
         
         // Prepare email data
         $email_data = [
-            'to' => env('CONTACT_EMAIL'),
-            'subject' => '[BudgetControl Contact] ' . $data['subject'],
-            'user_name' => $data['name'],
-            'message' => $this->formatEmailMessage($data)
+            'to' => $to,
+            'subject' => $message->getSubject(),
+            'user_name' => $message->getData()['name'],
+            'message' => $message->getMessage()
         ];
         
         $curl = invoke($mailer_path . '/notify/email/contact', 'POST', $email_data);
@@ -34,29 +36,6 @@ class EmailService
             'success' => true, 
             'message' => 'Message sent successfully! We\'ll get back to you soon.'
         ];
-    }
-    
-    private function formatEmailMessage($data)
-    {
-        return "
-            New contact form submission from BudgetControl website:<br/>
-            -----------------------------------
-
-            Name: {$data['name']}<br/>
-            Email: {$data['email']}<br/>
-            Subject: {$data['subject']}<br/>
-            Timestamp: {$data['timestamp']}<br/>
-            IP Address: {$data['ip_address']}<br/>
-            -----------------------------------<br/>
-
-            Message:<br/>
-            {$data['message']}<br/>
-
-            Is accepted privacy policy: " . ($data['privacy'] ? 'Yes' : 'No') . "<br/>
-
-            ---<br/>
-            This message was sent from the BudgetControl contact form.
-        ";
     }
    
 }

@@ -1,0 +1,98 @@
+{% include 'partials/header.html' with {'seo' : seo } %}
+
+<!-- success section -->
+<section class="full_page success_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <div class="success-icon">
+        <i class="fa fa-check-circle" style="color: #16a34a; font-size: 80px; margin-bottom: 20px;"></i>
+      </div>
+      <h2>
+        Payment <span>Successful!</span>
+      </h2>
+      <p>
+        Welcome to Budget Control Pro! Your license has been activated.
+      </p>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="success-details">
+          <div class="purchase-summary">
+            <h4>Purchase Summary</h4>
+            <div class="summary-item">
+              <div class="item-info">
+                <h5>Budget Control Pro License</h5>
+                <p>Order #: {{ order_id }}</p>
+                <p>Date: {{ purchase_date }}</p>
+                <p>Amount: €{{ amount }}</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="next-steps">
+            <h4>What's Next?</h4>
+            <div class="steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h5>Check Your Email</h5>
+                  <p>We've sent your license key and activation instructions to {{ email }}</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h5>Access Your Account</h5>
+                  <p>Login to your Budget Control account to activate your pro features</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h5>Get Support</h5>
+                  <p>Need help? Contact our priority support team anytime</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="pro-features">
+            <h4>You Now Have Access To:</h4>
+            <div class="features-grid">
+              <div class="feature">
+                <i class="fa fa-infinity"></i>
+                <span>Unlimited Accounts</span>
+              </div>
+              <div class="feature">
+                <i class="fa fa-chart-line"></i>
+                <span>Advanced Analytics</span>
+              </div>
+              <div class="feature">
+                <i class="fa fa-code"></i>
+                <span>API Access</span>
+              </div>
+              <div class="feature">
+                <i class="fa fa-headset"></i>
+                <span>Priority Support</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="action-buttons">
+            <a href="https://app.budgetcontrol.cloud" class="btn btn-primary">
+              <i class="fa fa-sign-in-alt"></i> Access Your Account
+            </a>
+            <a href="/contact" class="btn btn-outline">
+              <i class="fa fa-support"></i> Get Support
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end success section -->
+
+{% include 'partials/footer.html' %}

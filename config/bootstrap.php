@@ -4,6 +4,7 @@ use Monolog\Level;
 use Illuminate\Database\Capsule\Manager as Capsule;
 use MadeITBelgium\WordPress\WordPress;
 use MadeITBelgium\WordPress\WordPressFacade;
+use Mlab\BudetControl\Services\EmailService;
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');
 $dotenv->load();
@@ -38,4 +39,5 @@ Illuminate\Support\Facades\Facade::setFacadeApplication([
     'wordpress-client' => $wordpressClient,
     'cache' => $cache,
     'route-site' => $routeSiteService,
+    'mail' => new EmailService()
 ]);

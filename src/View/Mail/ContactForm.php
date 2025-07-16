@@ -3,45 +3,59 @@ namespace Mlab\BudetControl\View\Mail;
 
 use MLAB\SdkMailer\View\Render\View;
 
-class ContactForm extends View  {
+class ContactForm implements ViewMailInterface {
 
-    private string $message;
-    private string $name;
+    protected array $data;
+    protected string $subject = 'Contact Form Submission';
 
-    public function view() :string
+    public function setSubject(string $subject): self
     {
-        return $this->render([
-            'message' => $this->message,
-            'name' => $this->name,
-        ]);
-    }
-
-    /**
-     * Set the value of message
-     *
-     * @param string $message
-     *
-     * @return self
-     */
-    public function setMessage(string $message): self
-    {
-        $this->message = $message;
+        $this->subject = $subject;
 
         return $this;
     }
 
-
-    /**
-     * Set the value of name
-     *
-     * @param string $name
-     *
-     * @return self
-     */
-    public function setName(string $name): self
+    public function getSubject(): string
     {
-        $this->name = $name;
+        return $this->subject;
+    }
+
+    public function setData(array $data): ViewMailInterface
+    {
+        if(empty($data['name']) || empty($data['email']) || empty($data['subject']) || empty($data['message']) || empty($data['timestamp']) || empty($data['ip_address']) || !isset($data['privacy'])) {
+            throw new \InvalidArgumentException('Required data fields are missing');
+        }
+
+        $this->data = $data;
 
         return $this;
+    }
+
+    public function getData(): array
+    {
+        return $this->data;
+    }
+
+    public function getMessage(): string
+    {
+        $data = $this->data;
+
+        return "
+            <p>New contact form submission from BudgetControl website:</p>
+
+            <p>Name: {$data['name']}</p>
+            <p>Email: {$data['email']}</p>
+            <p>Subject: {$data['subject']}</p>
+            <p>Timestamp: {$data['timestamp']}</p>
+            <p>IP Address: {$data['ip_address']}</p>
+
+            <p>Message:<br/>
+            {$data['message']}</p>
+
+            <p>Is accepted privacy policy: " . ($data['privacy'] ? 'Yes' : 'No') . "</p>
+
+            <p>This message was sent from the BudgetControl contact form.</p>
+        ";
+
     }
 }

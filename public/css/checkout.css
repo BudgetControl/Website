@@ -1,0 +1,123 @@
+/**
+ * Checkout specific styles that complement main style.scss
+ */
+
+.checkout_section {
+  background-color: #fff;
+  color: #1f1f1f;
+}
+
+.checkout_form {
+  transition: all 0.3s ease;
+}
+
+.order-summary {
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 20px;
+}
+
+.summary-item {
+  background-color: rgba(22, 163, 74, 0.05) !important;
+}
+
+.features-list li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.features-list li i {
+  margin-right: 10px;
+  min-width: 16px;
+}
+
+/* Payment Elements */
+#card-element {
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+#card-element:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 0.2rem rgba(22, 163, 74, 0.25);
+}
+
+#card-errors {
+  min-height: 20px;
+  color: #dc3545;
+}
+
+/* Checkout sidebar */
+.checkout-sidebar .card {
+  transition: transform 0.3s ease;
+}
+
+.checkout-sidebar .card:hover {
+  transform: translateY(-5px);
+}
+
+.badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badges i {
+  margin-right: 8px;
+}
+
+/* Custom button styles */
+.btn-purchase {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #16a34a;
+  color: #ffffff;
+  border-radius: 5px;
+  transition: all 0.3s;
+  border: none;
+  width: 100%;
+}
+
+.btn-purchase:hover {
+  background-color: #059669;
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .checkout-sidebar {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .summary-item {
+    flex-direction: column;
+  }
+  
+  .item-price {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .summary-total {
+    text-align: center;
+  }
+}
+
+/* Form styles to match contact-form */
+.checkout_form input,
+.checkout_form select,
+.checkout_form textarea {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+
+.checkout_form input:focus,
+.checkout_form select:focus,
+.checkout_form textarea:focus {
+  border-color: #16a34a;
+  box-shadow: 0 0 0 0.2rem rgba(22, 163, 74, 0.25);
+}
