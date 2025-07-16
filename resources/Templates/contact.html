@@ -1,49 +1,107 @@
 {% include 'partials/header.html' with {'seo' : seo } %}
 
-<!-- documentation section -->
-
-<section class="page layout_padding">
+<!-- contact section -->
+<section class="full_page contact_section layout_padding">
   <div class="container">
     <div class="heading_container heading_center">
       <h2>
         Contact <span>Us</span>
       </h2>
+      <p>
+        We're here to help! Reach out to us for any questions, feedback, or support needs.
+      </p>
     </div>
-    <div class="page">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box">
-            <p>
-              We're here to help! If you have any questions, feedback, or concerns, please don't hesitate to reach out to us. We value your input and are committed to providing you with the best possible experience. Your satisfaction is our top priority, and we're dedicated to addressing your needs promptly and effectively.
-             </p>
-          </div>
-
-          <div class="container contact-form">
-            <div class="col-md-12">
-              <form id="contact-form" action="javascript:void(0)">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                  <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
-                </div>
-                <div class="form-group">
-                    <input type="checkbox" required /> 
-                    <label class="f" for="privacy">
-                      I accept the <a href="https://dev.budgetcontrol.cloud/privacy"> policy policy </a>
-                    </label>
-                </div>
-                <button type="submit" class="btn cen">Submit</button>
-              </form>
+    
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="contact_form">
+          <div id="form-messages"></div>
+          
+          <form id="contact-form" method="POST" action="/contact/send">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
             </div>
-          </div>
-
+            
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter the subject" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea class="form-control" id="message" name="message" rows="6" placeholder="Enter your message" required></textarea>
+            </div>
+            
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="privacy" name="privacy" required>
+              <label class="form-check-label" for="privacy">
+                I accept the <a href="https://dev.budgetcontrol.cloud/privacy" target="_blank">privacy policy</a> *
+              </label>
+            </div>
+            
+            <div class="btn_box">
+              <button type="submit" class="btn btn-primary" id="submit-btn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading" style="display: none;">
+                  <i class="fa fa-spinner fa-spin"></i> Sending...
+                </span>
+              </button>
+            </div>
+          </form>
         </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- end documentation section -->
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const btnLoading = submitBtn.querySelector('.btn-loading');
+    const messagesDiv = document.getElementById('form-messages');
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    btnText.style.display = 'none';
+    btnLoading.style.display = 'inline';
+    messagesDiv.innerHTML = '';
+    
+    const formData = new FormData(this);
+    
+    fetch('/contact/send', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            messagesDiv.innerHTML = '<div class="alert alert-success">Message sent successfully! We\'ll get back to you soon.</div>';
+            this.reset();
+        } else {
+            messagesDiv.innerHTML = '<div class="alert alert-danger">Error: ' + (data.message || 'Failed to send message. Please try again.') + '</div>';
+        }
+    })
+    .catch(error => {
+        messagesDiv.innerHTML = '<div class="alert alert-danger">Network error. Please try again later.</div>';
+    })
+    .finally(() => {
+        // Reset button state
+        submitBtn.disabled = false;
+        btnText.style.display = 'inline';
+        btnLoading.style.display = 'none';
+    });
+});
+</script>
+
+<!-- end contact section -->
 
 {% include 'partials/footer.html' %}

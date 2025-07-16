@@ -24,9 +24,6 @@ $formatter = new \Monolog\Formatter\SyslogFormatter();
 $streamHandler->setFormatter($formatter);
 $logger->pushHandler($streamHandler);
 
-/** mail configuration */
-require_once __DIR__ . '/mail.php';
-
 /** WORDPRESS client service */
 require_once __DIR__ . '/wordpress.php';
 
@@ -38,7 +35,6 @@ $routeSiteService = new \Mlab\BudetControl\Services\RouteSiteService($app);
 // Set up the Facade application
 Illuminate\Support\Facades\Facade::setFacadeApplication([
     'log' => $logger,
-    'mail' => $mail,
     'wordpress-client' => $wordpressClient,
     'cache' => $cache,
     'route-site' => $routeSiteService,

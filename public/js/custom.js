@@ -68,19 +68,23 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $("#contact-form").submit(function(e) {
-        var email = $("#email").val();
-        var message = $("#message").val();
-        var name = $("#name").val();
+        const email = $("#email").val();
+        const message = $("#message").val();
+        const subject = $("#subject").val();
+        const name = $("#name").val();
+        const privacy = $("#privacy").is(":checked");
         if (email == "") {
             $("#error").html("Email is required");
         } else {
             $.ajax({
-                url: "/be/api/contact",
+                url: "/api/contact/send",
                 type: "POST",
                 data: {
                     email: email,
                     message: message,
-                    name: name
+                    name: name,
+                    subject: subject,
+                    privacy: privacy
                 },
                 success: function(data) {
                     $("#contact-form").trigger("reset");
